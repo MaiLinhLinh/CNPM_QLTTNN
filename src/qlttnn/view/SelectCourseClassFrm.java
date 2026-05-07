@@ -27,95 +27,28 @@ public class SelectCourseClassFrm extends javax.swing.JFrame {
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
+        java.awt.GridBagConstraints gridBagConstraints;
 
-        pnlProgramLevelInfo = new javax.swing.JPanel();
+        btnBack = new javax.swing.JButton();
+        jPanel1 = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
         lblProgramName = new javax.swing.JLabel();
-        lblProgramDesscription = new javax.swing.JLabel();
         lblLevelName = new javax.swing.JLabel();
         lblEntryLevel = new javax.swing.JLabel();
         lblTargetLevel = new javax.swing.JLabel();
         lblTotalSession = new javax.swing.JLabel();
         lblTuition = new javax.swing.JLabel();
-        btnBack = new javax.swing.JButton();
-        pnlCourseClassList = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         tblCourseClassList = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Tìm kiếm lớp học");
         setBackground(new java.awt.Color(255, 255, 255));
-
-        pnlProgramLevelInfo.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Thông tin chương trình và mức độ", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 0, 14))); // NOI18N
-
-        lblProgramName.setBackground(new java.awt.Color(255, 255, 255));
-        lblProgramName.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
-        lblProgramName.setText("Tên chương trình:");
-
-        lblProgramDesscription.setBackground(new java.awt.Color(255, 255, 255));
-        lblProgramDesscription.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
-        lblProgramDesscription.setText("Mô tả: ");
-
-        lblLevelName.setBackground(new java.awt.Color(255, 255, 255));
-        lblLevelName.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
-        lblLevelName.setText("Tên mức độ: ");
-
-        lblEntryLevel.setBackground(new java.awt.Color(255, 255, 255));
-        lblEntryLevel.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
-        lblEntryLevel.setText("Đầu vào:");
-
-        lblTargetLevel.setBackground(new java.awt.Color(255, 255, 255));
-        lblTargetLevel.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
-        lblTargetLevel.setText("Đầu ra: ");
-
-        lblTotalSession.setBackground(new java.awt.Color(255, 255, 255));
-        lblTotalSession.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
-        lblTotalSession.setText("Thời lượng:");
-
-        lblTuition.setBackground(new java.awt.Color(255, 255, 255));
-        lblTuition.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
-        lblTuition.setText("Học phí: ");
-
-        javax.swing.GroupLayout pnlProgramLevelInfoLayout = new javax.swing.GroupLayout(pnlProgramLevelInfo);
-        pnlProgramLevelInfo.setLayout(pnlProgramLevelInfoLayout);
-        pnlProgramLevelInfoLayout.setHorizontalGroup(
-            pnlProgramLevelInfoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(pnlProgramLevelInfoLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(pnlProgramLevelInfoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(pnlProgramLevelInfoLayout.createSequentialGroup()
-                        .addGroup(pnlProgramLevelInfoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(lblProgramName)
-                            .addComponent(lblProgramDesscription)
-                            .addComponent(lblLevelName, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(pnlProgramLevelInfoLayout.createSequentialGroup()
-                        .addGroup(pnlProgramLevelInfoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(lblTotalSession, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 85, Short.MAX_VALUE)
-                            .addComponent(lblEntryLevel, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 305, Short.MAX_VALUE)
-                        .addGroup(pnlProgramLevelInfoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(lblTargetLevel)
-                            .addComponent(lblTuition))
-                        .addGap(96, 96, 96))))
-        );
-        pnlProgramLevelInfoLayout.setVerticalGroup(
-            pnlProgramLevelInfoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(pnlProgramLevelInfoLayout.createSequentialGroup()
-                .addComponent(lblProgramName)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(lblProgramDesscription)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(lblLevelName)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(pnlProgramLevelInfoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblEntryLevel)
-                    .addComponent(lblTargetLevel))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(pnlProgramLevelInfoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblTotalSession)
-                    .addComponent(lblTuition))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
 
         btnBack.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
         btnBack.setText("Quay lại");
@@ -125,7 +58,113 @@ public class SelectCourseClassFrm extends javax.swing.JFrame {
             }
         });
 
-        pnlCourseClassList.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Danh sách lớp học đang mở", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 0, 14))); // NOI18N
+        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Thông tin chương trình", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 0, 14))); // NOI18N
+        java.awt.GridBagLayout jPanel1Layout = new java.awt.GridBagLayout();
+        jPanel1Layout.columnWidths = new int[] {0, 20, 0, 20, 0, 20, 0};
+        jPanel1Layout.rowHeights = new int[] {0, 5, 0, 5, 0, 5, 0};
+        jPanel1.setLayout(jPanel1Layout);
+
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jLabel1.setText("Tên chương trình:");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.gridwidth = 3;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_START;
+        jPanel1.add(jLabel1, gridBagConstraints);
+
+        jLabel3.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jLabel3.setText("Mức độ:");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 2;
+        gridBagConstraints.gridwidth = 3;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_START;
+        jPanel1.add(jLabel3, gridBagConstraints);
+
+        jLabel4.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jLabel4.setText("Đầu vào:");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 4;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_START;
+        jPanel1.add(jLabel4, gridBagConstraints);
+
+        jLabel5.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jLabel5.setText("Đầu ra:");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 4;
+        gridBagConstraints.gridy = 4;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_START;
+        jPanel1.add(jLabel5, gridBagConstraints);
+
+        jLabel6.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jLabel6.setText("Thời lượng:");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 6;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_START;
+        jPanel1.add(jLabel6, gridBagConstraints);
+
+        jLabel7.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jLabel7.setText("Học phí:");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 4;
+        gridBagConstraints.gridy = 6;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_START;
+        jPanel1.add(jLabel7, gridBagConstraints);
+
+        lblProgramName.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        lblProgramName.setText("IELTS Foundation");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 4;
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.gridwidth = 3;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_START;
+        jPanel1.add(lblProgramName, gridBagConstraints);
+
+        lblLevelName.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        lblLevelName.setText("IELTS 4.5");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 4;
+        gridBagConstraints.gridy = 2;
+        gridBagConstraints.gridwidth = 3;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_START;
+        jPanel1.add(lblLevelName, gridBagConstraints);
+
+        lblEntryLevel.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        lblEntryLevel.setText("0");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 2;
+        gridBagConstraints.gridy = 4;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_START;
+        jPanel1.add(lblEntryLevel, gridBagConstraints);
+
+        lblTargetLevel.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        lblTargetLevel.setText("4.5");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 6;
+        gridBagConstraints.gridy = 4;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_START;
+        jPanel1.add(lblTargetLevel, gridBagConstraints);
+
+        lblTotalSession.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        lblTotalSession.setText(" 30 buổi");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 2;
+        gridBagConstraints.gridy = 6;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_START;
+        jPanel1.add(lblTotalSession, gridBagConstraints);
+
+        lblTuition.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        lblTuition.setText("10.000.000 VNĐ");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 6;
+        gridBagConstraints.gridy = 6;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_START;
+        jPanel1.add(lblTuition, gridBagConstraints);
+
+        jScrollPane1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Danh sách lớp học đang mở", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 0, 14))); // NOI18N
 
         tblCourseClassList.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
         tblCourseClassList.setModel(new javax.swing.table.DefaultTableModel(
@@ -143,7 +182,7 @@ public class SelectCourseClassFrm extends javax.swing.JFrame {
                 java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
             };
             boolean[] canEdit = new boolean [] {
-                false, true, true, true, true, true
+                false, false, false, false, false, false
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -159,46 +198,30 @@ public class SelectCourseClassFrm extends javax.swing.JFrame {
             tblCourseClassList.getColumnModel().getColumn(0).setMaxWidth(25);
         }
 
-        javax.swing.GroupLayout pnlCourseClassListLayout = new javax.swing.GroupLayout(pnlCourseClassList);
-        pnlCourseClassList.setLayout(pnlCourseClassListLayout);
-        pnlCourseClassListLayout.setHorizontalGroup(
-            pnlCourseClassListLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(pnlCourseClassListLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 539, Short.MAX_VALUE)
-                .addContainerGap())
-        );
-        pnlCourseClassListLayout.setVerticalGroup(
-            pnlCourseClassListLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(pnlCourseClassListLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 123, Short.MAX_VALUE)
-                .addContainerGap())
-        );
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(22, 22, 22)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(btnBack)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(pnlCourseClassList, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(pnlProgramLevelInfo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(29, Short.MAX_VALUE))
+                .addContainerGap()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(btnBack))
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 588, Short.MAX_VALUE))
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(pnlProgramLevelInfo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(pnlCourseClassList, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 326, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnBack)
-                .addContainerGap(15, Short.MAX_VALUE))
+                .addContainerGap())
         );
 
         pack();
@@ -219,7 +242,7 @@ public class SelectCourseClassFrm extends javax.swing.JFrame {
          */
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
+                if ("Windows".equals(info.getName())) {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
                     break;
                 }
@@ -235,16 +258,20 @@ public class SelectCourseClassFrm extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnBack;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lblEntryLevel;
     private javax.swing.JLabel lblLevelName;
-    private javax.swing.JLabel lblProgramDesscription;
     private javax.swing.JLabel lblProgramName;
     private javax.swing.JLabel lblTargetLevel;
     private javax.swing.JLabel lblTotalSession;
     private javax.swing.JLabel lblTuition;
-    private javax.swing.JPanel pnlCourseClassList;
-    private javax.swing.JPanel pnlProgramLevelInfo;
     private javax.swing.JTable tblCourseClassList;
     // End of variables declaration//GEN-END:variables
 }

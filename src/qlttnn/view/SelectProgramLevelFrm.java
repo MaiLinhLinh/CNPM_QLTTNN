@@ -30,7 +30,6 @@ public class SelectProgramLevelFrm extends javax.swing.JFrame {
 
         pnlSelectProgram = new javax.swing.JPanel();
         cbxProgram = new javax.swing.JComboBox<>();
-        pnlLevelList = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
         tblLevelList = new javax.swing.JTable();
         btnBack = new javax.swing.JButton();
@@ -42,7 +41,7 @@ public class SelectProgramLevelFrm extends javax.swing.JFrame {
         pnlSelectProgram.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Chọn chương trình", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 0, 14))); // NOI18N
 
         cbxProgram.setEditable(true);
-        cbxProgram.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
+        cbxProgram.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         cbxProgram.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "IELTS", "TOEIC LR", "TOEIC RW", "TOEFL" }));
         cbxProgram.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -54,19 +53,19 @@ public class SelectProgramLevelFrm extends javax.swing.JFrame {
         pnlSelectProgram.setLayout(pnlSelectProgramLayout);
         pnlSelectProgramLayout.setHorizontalGroup(
             pnlSelectProgramLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlSelectProgramLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(cbxProgram, javax.swing.GroupLayout.PREFERRED_SIZE, 386, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18))
+            .addGroup(pnlSelectProgramLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(cbxProgram, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
         pnlSelectProgramLayout.setVerticalGroup(
             pnlSelectProgramLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlSelectProgramLayout.createSequentialGroup()
                 .addComponent(cbxProgram, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 9, Short.MAX_VALUE))
+                .addGap(0, 3, Short.MAX_VALUE))
         );
 
-        pnlLevelList.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Danh sách mức độ", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 0, 14))); // NOI18N
+        jScrollPane2.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Danh sách mức độ", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 0, 14))); // NOI18N
 
         tblLevelList.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -83,7 +82,7 @@ public class SelectProgramLevelFrm extends javax.swing.JFrame {
                 java.lang.Integer.class, java.lang.String.class, java.lang.Double.class, java.lang.Double.class, java.lang.Integer.class, java.lang.Double.class
             };
             boolean[] canEdit = new boolean [] {
-                false, true, true, true, true, true
+                false, false, false, false, false, false
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -101,25 +100,6 @@ public class SelectProgramLevelFrm extends javax.swing.JFrame {
             tblLevelList.getColumnModel().getColumn(0).setMaxWidth(50);
         }
 
-        javax.swing.GroupLayout pnlLevelListLayout = new javax.swing.GroupLayout(pnlLevelList);
-        pnlLevelList.setLayout(pnlLevelListLayout);
-        pnlLevelListLayout.setHorizontalGroup(
-            pnlLevelListLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 413, Short.MAX_VALUE)
-            .addGroup(pnlLevelListLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(pnlLevelListLayout.createSequentialGroup()
-                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 413, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, Short.MAX_VALUE)))
-        );
-        pnlLevelListLayout.setVerticalGroup(
-            pnlLevelListLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 124, Short.MAX_VALUE)
-            .addGroup(pnlLevelListLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlLevelListLayout.createSequentialGroup()
-                    .addContainerGap()
-                    .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 118, Short.MAX_VALUE)))
-        );
-
         btnBack.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
         btnBack.setText("Quay lại");
         btnBack.addActionListener(new java.awt.event.ActionListener() {
@@ -135,23 +115,23 @@ public class SelectProgramLevelFrm extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(pnlLevelList, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(pnlSelectProgram, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(pnlSelectProgram, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(btnBack)
-                        .addGap(10, 10, 10)))
-                .addContainerGap(17, Short.MAX_VALUE))
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(btnBack))
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 588, Short.MAX_VALUE))
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(pnlSelectProgram, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(pnlLevelList, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 292, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnBack)
-                .addContainerGap(20, Short.MAX_VALUE))
+                .addContainerGap())
         );
 
         pack();
@@ -176,7 +156,7 @@ public class SelectProgramLevelFrm extends javax.swing.JFrame {
          */
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
+                if ("Windows".equals(info.getName())) {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
                     break;
                 }
@@ -194,7 +174,6 @@ public class SelectProgramLevelFrm extends javax.swing.JFrame {
     private javax.swing.JButton btnBack;
     private javax.swing.JComboBox<String> cbxProgram;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JPanel pnlLevelList;
     private javax.swing.JPanel pnlSelectProgram;
     private javax.swing.JTable tblLevelList;
     // End of variables declaration//GEN-END:variables

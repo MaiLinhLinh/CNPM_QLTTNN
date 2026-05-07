@@ -31,96 +31,183 @@ public class BillFrm extends javax.swing.JFrame {
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
+        java.awt.GridBagConstraints gridBagConstraints;
 
-        pnlStudentInfo = new javax.swing.JPanel();
+        jPanel1 = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        lblEnrollmentStaff = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        lblBillingDate = new javax.swing.JLabel();
+        jPanel2 = new javax.swing.JPanel();
+        jLabel3 = new javax.swing.JLabel();
         lblFullName = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
         lblDateOfBirth = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
         lblIDCard = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
         lblPhone = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
         lblEmail = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
         lblAddress = new javax.swing.JLabel();
-        pnlRegisteredClassList = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
         tblRegisteredClass = new javax.swing.JTable();
-        lblSale = new javax.swing.JLabel();
-        lblTotalTuition = new javax.swing.JLabel();
-        lblPaid = new javax.swing.JLabel();
-        lblDebt = new javax.swing.JLabel();
-        lblPaymentAmount = new javax.swing.JLabel();
-        cbxPaymentType = new javax.swing.JComboBox<>();
-        lblPaymentType = new javax.swing.JLabel();
-        pnlSessionList = new javax.swing.JPanel();
         jScrollPane3 = new javax.swing.JScrollPane();
         tblSessionList = new javax.swing.JTable();
+        jPanel3 = new javax.swing.JPanel();
+        lblSale = new javax.swing.JLabel();
+        lblTotalTuition = new javax.swing.JLabel();
+        lblPaymentAmount = new javax.swing.JLabel();
+        cbxPaymentType = new javax.swing.JComboBox<>();
+        txtPaymentAmount = new javax.swing.JTextField();
+        lblPaymentType = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
         btnConfirm = new javax.swing.JButton();
         btnCancel = new javax.swing.JButton();
-        txtPaymentAmount = new javax.swing.JTextField();
-        lblEnrollmentStaff = new javax.swing.JLabel();
-        lblBillingDate = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Hoá đơn");
         setBackground(new java.awt.Color(255, 255, 255));
 
-        pnlStudentInfo.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Thông tin học viên", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 0, 14))); // NOI18N
+        jPanel1.setLayout(new java.awt.GridLayout(1, 4));
+
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jLabel1.setText("Người tạo phiếu:  ");
+        jPanel1.add(jLabel1);
+
+        lblEnrollmentStaff.setBackground(new java.awt.Color(255, 255, 255));
+        lblEnrollmentStaff.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        lblEnrollmentStaff.setText("Văn Thị Mai Linh");
+        jPanel1.add(lblEnrollmentStaff);
+
+        jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jLabel2.setText("Ngày tạo phiếu:  ");
+        jPanel1.add(jLabel2);
+
+        lblBillingDate.setBackground(new java.awt.Color(255, 255, 255));
+        lblBillingDate.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        lblBillingDate.setText("07/05/2026");
+        jPanel1.add(lblBillingDate);
+
+        jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Thông tin học viên", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 0, 14))); // NOI18N
+        java.awt.GridBagLayout pnlStudentInfoLayout = new java.awt.GridBagLayout();
+        pnlStudentInfoLayout.columnWidths = new int[] {0, 20, 0};
+        pnlStudentInfoLayout.rowHeights = new int[] {0, 5, 0, 5, 0, 5, 0, 5, 0, 5, 0};
+        jPanel2.setLayout(pnlStudentInfoLayout);
+
+        jLabel3.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jLabel3.setText("Họ và tên:");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_START;
+        jPanel2.add(jLabel3, gridBagConstraints);
 
         lblFullName.setBackground(new java.awt.Color(255, 255, 255));
-        lblFullName.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
-        lblFullName.setText("Họ tên:");
+        lblFullName.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        lblFullName.setText("Hoàng Hoàng Tuấn");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 2;
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_START;
+        jPanel2.add(lblFullName, gridBagConstraints);
+
+        jLabel4.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jLabel4.setText("Ngày sinh:");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 2;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_START;
+        jPanel2.add(jLabel4, gridBagConstraints);
 
         lblDateOfBirth.setBackground(new java.awt.Color(255, 255, 255));
-        lblDateOfBirth.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
-        lblDateOfBirth.setText("Ngày sinh: ");
+        lblDateOfBirth.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        lblDateOfBirth.setText("19/02/2005");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 2;
+        gridBagConstraints.gridy = 2;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_START;
+        jPanel2.add(lblDateOfBirth, gridBagConstraints);
+
+        jLabel5.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jLabel5.setText("CCCD:");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 4;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_START;
+        jPanel2.add(jLabel5, gridBagConstraints);
 
         lblIDCard.setBackground(new java.awt.Color(255, 255, 255));
-        lblIDCard.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
-        lblIDCard.setText("CCCD: ");
+        lblIDCard.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        lblIDCard.setText("000123456789");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 2;
+        gridBagConstraints.gridy = 4;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_START;
+        jPanel2.add(lblIDCard, gridBagConstraints);
+
+        jLabel6.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jLabel6.setText("SĐT:");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 6;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_START;
+        jPanel2.add(jLabel6, gridBagConstraints);
 
         lblPhone.setBackground(new java.awt.Color(255, 255, 255));
-        lblPhone.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
-        lblPhone.setText("Số điện thoại: ");
+        lblPhone.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        lblPhone.setText("0123456789");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 2;
+        gridBagConstraints.gridy = 6;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_START;
+        jPanel2.add(lblPhone, gridBagConstraints);
+
+        jLabel7.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jLabel7.setText("Email:");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 8;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_START;
+        jPanel2.add(jLabel7, gridBagConstraints);
 
         lblEmail.setBackground(new java.awt.Color(255, 255, 255));
-        lblEmail.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
-        lblEmail.setText("Email: ");
+        lblEmail.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        lblEmail.setText("hhtuann@gmail.com");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 2;
+        gridBagConstraints.gridy = 8;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_START;
+        jPanel2.add(lblEmail, gridBagConstraints);
+
+        jLabel8.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jLabel8.setText("Địa chỉ:");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 10;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_START;
+        jPanel2.add(jLabel8, gridBagConstraints);
 
         lblAddress.setBackground(new java.awt.Color(255, 255, 255));
-        lblAddress.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
-        lblAddress.setText("Địa chỉ: ");
+        lblAddress.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        lblAddress.setText("Hoằng Hoá - Thanh Hoá");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 2;
+        gridBagConstraints.gridy = 10;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_START;
+        jPanel2.add(lblAddress, gridBagConstraints);
 
-        javax.swing.GroupLayout pnlStudentInfoLayout = new javax.swing.GroupLayout(pnlStudentInfo);
-        pnlStudentInfo.setLayout(pnlStudentInfoLayout);
-        pnlStudentInfoLayout.setHorizontalGroup(
-            pnlStudentInfoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(pnlStudentInfoLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(pnlStudentInfoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lblFullName, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblDateOfBirth)
-                    .addComponent(lblIDCard)
-                    .addComponent(lblPhone)
-                    .addGroup(pnlStudentInfoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addComponent(lblAddress, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 60, Short.MAX_VALUE)
-                        .addComponent(lblEmail, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                .addContainerGap(363, Short.MAX_VALUE))
-        );
-        pnlStudentInfoLayout.setVerticalGroup(
-            pnlStudentInfoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(pnlStudentInfoLayout.createSequentialGroup()
-                .addComponent(lblFullName)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(lblDateOfBirth)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(lblIDCard)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(lblPhone)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(lblEmail)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(lblAddress))
-        );
-
-        pnlRegisteredClassList.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Danh sách lớp học đăng kí", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 0, 14))); // NOI18N
+        jScrollPane2.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Danh sách lớp học đăng ký", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 0, 14))); // NOI18N
 
         tblRegisteredClass.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
         tblRegisteredClass.setModel(new javax.swing.table.DefaultTableModel(
@@ -138,7 +225,7 @@ public class BillFrm extends javax.swing.JFrame {
                 java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
             };
             boolean[] canEdit = new boolean [] {
-                false, true, true, true, true, true, true
+                false, false, false, false, false, false, false
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -161,52 +248,7 @@ public class BillFrm extends javax.swing.JFrame {
             tblRegisteredClass.getColumnModel().getColumn(5).setMaxWidth(100);
         }
 
-        javax.swing.GroupLayout pnlRegisteredClassListLayout = new javax.swing.GroupLayout(pnlRegisteredClassList);
-        pnlRegisteredClassList.setLayout(pnlRegisteredClassListLayout);
-        pnlRegisteredClassListLayout.setHorizontalGroup(
-            pnlRegisteredClassListLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlRegisteredClassListLayout.createSequentialGroup()
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 465, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
-        );
-        pnlRegisteredClassListLayout.setVerticalGroup(
-            pnlRegisteredClassListLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 98, Short.MAX_VALUE)
-        );
-
-        lblSale.setBackground(new java.awt.Color(255, 255, 255));
-        lblSale.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
-        lblSale.setText("Khuyến mãi: ");
-
-        lblTotalTuition.setBackground(new java.awt.Color(255, 255, 255));
-        lblTotalTuition.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
-        lblTotalTuition.setText("Tổng tiền học phí:");
-
-        lblPaid.setBackground(new java.awt.Color(255, 255, 255));
-        lblPaid.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
-        lblPaid.setText("Đã thanh toán:");
-
-        lblDebt.setBackground(new java.awt.Color(255, 255, 255));
-        lblDebt.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
-        lblDebt.setText("Còn nợ:");
-
-        lblPaymentAmount.setBackground(new java.awt.Color(255, 255, 255));
-        lblPaymentAmount.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
-        lblPaymentAmount.setText("Số tiền thanh toán lần này:");
-
-        cbxPaymentType.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
-        cbxPaymentType.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Chuyển khoản", "Tiền mặt" }));
-        cbxPaymentType.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cbxPaymentTypeActionPerformed(evt);
-            }
-        });
-
-        lblPaymentType.setBackground(new java.awt.Color(255, 255, 255));
-        lblPaymentType.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
-        lblPaymentType.setText("Hình thức thanh toán: ");
-
-        pnlSessionList.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Danh sách các buổi học", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 0, 14))); // NOI18N
+        jScrollPane3.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Danh sách các buổi học", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 0, 14))); // NOI18N
 
         tblSessionList.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
         tblSessionList.setModel(new javax.swing.table.DefaultTableModel(
@@ -224,7 +266,7 @@ public class BillFrm extends javax.swing.JFrame {
                 java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
             };
             boolean[] canEdit = new boolean [] {
-                false, true, true, true, true, true, true
+                false, false, false, false, false, false, false
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -240,18 +282,87 @@ public class BillFrm extends javax.swing.JFrame {
             tblSessionList.getColumnModel().getColumn(0).setMaxWidth(30);
         }
 
-        javax.swing.GroupLayout pnlSessionListLayout = new javax.swing.GroupLayout(pnlSessionList);
-        pnlSessionList.setLayout(pnlSessionListLayout);
-        pnlSessionListLayout.setHorizontalGroup(
-            pnlSessionListLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 464, Short.MAX_VALUE)
-        );
-        pnlSessionListLayout.setVerticalGroup(
-            pnlSessionListLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
-        );
+        java.awt.GridBagLayout jPanel3Layout = new java.awt.GridBagLayout();
+        jPanel3Layout.columnWidths = new int[] {0, 20, 0};
+        jPanel3Layout.rowHeights = new int[] {0, 5, 0, 5, 0, 5, 0};
+        jPanel3.setLayout(jPanel3Layout);
 
-        btnConfirm.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
+        lblSale.setBackground(new java.awt.Color(255, 255, 255));
+        lblSale.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        lblSale.setText("Khuyến mãi: ");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 2;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_START;
+        jPanel3.add(lblSale, gridBagConstraints);
+
+        lblTotalTuition.setBackground(new java.awt.Color(255, 255, 255));
+        lblTotalTuition.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        lblTotalTuition.setText("Tổng tiền học phí:");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_START;
+        jPanel3.add(lblTotalTuition, gridBagConstraints);
+
+        lblPaymentAmount.setBackground(new java.awt.Color(255, 255, 255));
+        lblPaymentAmount.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        lblPaymentAmount.setText("Số tiền thanh toán lần này:");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 4;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_START;
+        jPanel3.add(lblPaymentAmount, gridBagConstraints);
+
+        cbxPaymentType.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        cbxPaymentType.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Chuyển khoản", "Tiền mặt" }));
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 2;
+        gridBagConstraints.gridy = 6;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_START;
+        gridBagConstraints.weightx = 1.0;
+        jPanel3.add(cbxPaymentType, gridBagConstraints);
+
+        txtPaymentAmount.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 2;
+        gridBagConstraints.gridy = 4;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_START;
+        gridBagConstraints.weightx = 1.0;
+        jPanel3.add(txtPaymentAmount, gridBagConstraints);
+
+        lblPaymentType.setBackground(new java.awt.Color(255, 255, 255));
+        lblPaymentType.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        lblPaymentType.setText("Hình thức thanh toán: ");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 6;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_START;
+        jPanel3.add(lblPaymentType, gridBagConstraints);
+
+        jLabel9.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jLabel9.setText("100.000.000 VNĐ");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 2;
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_START;
+        gridBagConstraints.weightx = 1.0;
+        jPanel3.add(jLabel9, gridBagConstraints);
+
+        jLabel10.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jLabel10.setText("50%");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 2;
+        gridBagConstraints.gridy = 2;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_START;
+        gridBagConstraints.weightx = 1.0;
+        jPanel3.add(jLabel10, gridBagConstraints);
+
+        btnConfirm.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         btnConfirm.setText("Xác nhận");
         btnConfirm.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -259,7 +370,7 @@ public class BillFrm extends javax.swing.JFrame {
             }
         });
 
-        btnCancel.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
+        btnCancel.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         btnCancel.setText("Huỷ");
         btnCancel.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -267,83 +378,43 @@ public class BillFrm extends javax.swing.JFrame {
             }
         });
 
-        txtPaymentAmount.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
-
-        lblEnrollmentStaff.setBackground(new java.awt.Color(255, 255, 255));
-        lblEnrollmentStaff.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
-        lblEnrollmentStaff.setText("Người tạo phiếu:");
-
-        lblBillingDate.setBackground(new java.awt.Color(255, 255, 255));
-        lblBillingDate.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
-        lblBillingDate.setText("Ngày tạo phiếu: ");
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(27, 27, 27)
+                .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(lblBillingDate)
-                        .addComponent(lblEnrollmentStaff))
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(lblPaymentType)
-                        .addGap(92, 92, 92)
-                        .addComponent(lblDebt, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(pnlRegisteredClassList, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(pnlStudentInfo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(lblTotalTuition)
-                        .addComponent(lblSale, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(lblPaid, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                            .addComponent(lblPaymentAmount, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(txtPaymentAmount, javax.swing.GroupLayout.PREFERRED_SIZE, 225, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(btnConfirm)
-                                    .addComponent(cbxPaymentType, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addGap(8, 8, 8))
-                        .addComponent(btnCancel, javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addComponent(pnlSessionList, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(20, Short.MAX_VALUE))
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(btnConfirm)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btnCancel))
+                    .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jScrollPane2)
+                    .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 638, Short.MAX_VALUE)
+                    .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(lblEnrollmentStaff)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(lblBillingDate)
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(pnlStudentInfo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 219, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(pnlRegisteredClassList, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 213, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(pnlSessionList, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(12, 12, 12)
-                .addComponent(lblTotalTuition)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(lblSale)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblPaid)
-                    .addComponent(lblDebt))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblPaymentAmount)
-                    .addComponent(txtPaymentAmount, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblPaymentType)
-                    .addComponent(cbxPaymentType, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 21, Short.MAX_VALUE)
+                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnCancel)
                     .addComponent(btnConfirm))
-                .addGap(14, 14, 14))
+                .addContainerGap())
         );
 
         pack();
@@ -357,10 +428,6 @@ public class BillFrm extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_btnCancelActionPerformed
 
-    private void cbxPaymentTypeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbxPaymentTypeActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_cbxPaymentTypeActionPerformed
-
     /**
      * @param args the command line arguments
      */
@@ -372,7 +439,7 @@ public class BillFrm extends javax.swing.JFrame {
          */
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
+                if ("Windows".equals(info.getName())) {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
                     break;
                 }
@@ -390,25 +457,33 @@ public class BillFrm extends javax.swing.JFrame {
     private javax.swing.JButton btnCancel;
     private javax.swing.JButton btnConfirm;
     private javax.swing.JComboBox<String> cbxPaymentType;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JLabel lblAddress;
     private javax.swing.JLabel lblBillingDate;
     private javax.swing.JLabel lblDateOfBirth;
-    private javax.swing.JLabel lblDebt;
     private javax.swing.JLabel lblEmail;
     private javax.swing.JLabel lblEnrollmentStaff;
     private javax.swing.JLabel lblFullName;
     private javax.swing.JLabel lblIDCard;
-    private javax.swing.JLabel lblPaid;
     private javax.swing.JLabel lblPaymentAmount;
     private javax.swing.JLabel lblPaymentType;
     private javax.swing.JLabel lblPhone;
     private javax.swing.JLabel lblSale;
     private javax.swing.JLabel lblTotalTuition;
-    private javax.swing.JPanel pnlRegisteredClassList;
-    private javax.swing.JPanel pnlSessionList;
-    private javax.swing.JPanel pnlStudentInfo;
     private javax.swing.JTable tblRegisteredClass;
     private javax.swing.JTable tblSessionList;
     private javax.swing.JTextField txtPaymentAmount;

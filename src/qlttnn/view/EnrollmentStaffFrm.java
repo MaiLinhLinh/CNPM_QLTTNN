@@ -41,7 +41,8 @@ public class EnrollmentStaffFrm extends javax.swing.JFrame {
         setBackground(new java.awt.Color(255, 255, 255));
 
         lblHomePage.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        lblHomePage.setText("TRANG CHỦ");
+        lblHomePage.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblHomePage.setText("XIN CHÀO");
 
         btnRegisterCourse.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
         btnRegisterCourse.setText("Đăng kí khoá học");
@@ -51,36 +52,40 @@ public class EnrollmentStaffFrm extends javax.swing.JFrame {
             }
         });
 
-        lblEnrollmentStaffName.setText("Họ tên nhân viên");
+        lblEnrollmentStaffName.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblEnrollmentStaffName.setText("Văn Thị Mai Linh");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(lblEnrollmentStaffName)
-                .addGap(45, 45, 45))
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(lblHomePage, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(132, 132, 132))
             .addGroup(layout.createSequentialGroup()
-                .addGap(115, 115, 115)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(btnRegisterCourse)
-                    .addComponent(lblHomePage, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(138, Short.MAX_VALUE))
+                .addContainerGap()
+                .addComponent(lblEnrollmentStaffName, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(124, Short.MAX_VALUE)
+                .addComponent(btnRegisterCourse)
+                .addGap(124, 124, 124))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(24, 24, 24)
+                .addComponent(lblHomePage)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(lblEnrollmentStaffName)
                 .addGap(18, 18, 18)
-                .addComponent(lblHomePage)
-                .addGap(30, 30, 30)
                 .addComponent(btnRegisterCourse)
-                .addContainerGap(37, Short.MAX_VALUE))
+                .addContainerGap(33, Short.MAX_VALUE))
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnRegisterCourseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegisterCourseActionPerformed
@@ -101,7 +106,7 @@ public class EnrollmentStaffFrm extends javax.swing.JFrame {
          */
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
+                if ("Windows".equals(info.getName())) {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
                     break;
                 }
