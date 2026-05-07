@@ -30,24 +30,149 @@ public class RegisterCourseFrm extends javax.swing.JFrame {
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
+        java.awt.GridBagConstraints gridBagConstraints;
 
-        pnlCourseClassList = new javax.swing.JPanel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        tblCourseClassList = new javax.swing.JTable();
         btnAddCourseClass = new javax.swing.JButton();
         btnRegister = new javax.swing.JButton();
         pnlStudentInfo = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
         lblFullName = new javax.swing.JLabel();
         lblDateOfBirth = new javax.swing.JLabel();
-        lblPhone = new javax.swing.JLabel();
         lblIDCard = new javax.swing.JLabel();
+        lblPhone = new javax.swing.JLabel();
+        lblEmail = new javax.swing.JLabel();
         lblAddress = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        tblCourseClassList = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Đăng kí học");
         setBackground(new java.awt.Color(255, 255, 255));
 
-        pnlCourseClassList.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Danh sách lớp đăng kí nguyện vọng", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 0, 14))); // NOI18N
+        btnAddCourseClass.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        btnAddCourseClass.setText("Thêm lớp học");
+        btnAddCourseClass.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAddCourseClassActionPerformed(evt);
+            }
+        });
+
+        btnRegister.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        btnRegister.setText("Đăng kí");
+        btnRegister.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRegisterActionPerformed(evt);
+            }
+        });
+
+        pnlStudentInfo.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Thông tin học viên", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 0, 14))); // NOI18N
+        java.awt.GridBagLayout pnlStudentInfoLayout = new java.awt.GridBagLayout();
+        pnlStudentInfoLayout.columnWidths = new int[] {0, 20, 0};
+        pnlStudentInfoLayout.rowHeights = new int[] {0, 5, 0, 5, 0, 5, 0, 5, 0, 5, 0};
+        pnlStudentInfo.setLayout(pnlStudentInfoLayout);
+
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jLabel1.setText("Họ và tên:");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_START;
+        pnlStudentInfo.add(jLabel1, gridBagConstraints);
+
+        jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jLabel2.setText("Ngày sinh:");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 2;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_START;
+        pnlStudentInfo.add(jLabel2, gridBagConstraints);
+
+        jLabel3.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jLabel3.setText("CCCD:");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 4;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_START;
+        pnlStudentInfo.add(jLabel3, gridBagConstraints);
+
+        jLabel4.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jLabel4.setText("SĐT:");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 6;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_START;
+        pnlStudentInfo.add(jLabel4, gridBagConstraints);
+
+        jLabel5.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jLabel5.setText("Email:");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 8;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_START;
+        pnlStudentInfo.add(jLabel5, gridBagConstraints);
+
+        jLabel6.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jLabel6.setText("Địa chỉ:");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 10;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_START;
+        pnlStudentInfo.add(jLabel6, gridBagConstraints);
+
+        lblFullName.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        lblFullName.setText("Hoàng Hoàng Tuấn");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 2;
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_START;
+        pnlStudentInfo.add(lblFullName, gridBagConstraints);
+
+        lblDateOfBirth.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        lblDateOfBirth.setText("19/01/2005");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 2;
+        gridBagConstraints.gridy = 2;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_START;
+        pnlStudentInfo.add(lblDateOfBirth, gridBagConstraints);
+
+        lblIDCard.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        lblIDCard.setText("000123456789");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 2;
+        gridBagConstraints.gridy = 4;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_START;
+        pnlStudentInfo.add(lblIDCard, gridBagConstraints);
+
+        lblPhone.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        lblPhone.setText("0123456789");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 2;
+        gridBagConstraints.gridy = 6;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_START;
+        pnlStudentInfo.add(lblPhone, gridBagConstraints);
+
+        lblEmail.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        lblEmail.setText("hhtuann@gmail.com");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 2;
+        gridBagConstraints.gridy = 8;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_START;
+        pnlStudentInfo.add(lblEmail, gridBagConstraints);
+
+        lblAddress.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        lblAddress.setText("Hoằng Hoá - Thanh Hoá");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 2;
+        gridBagConstraints.gridy = 10;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_START;
+        pnlStudentInfo.add(lblAddress, gridBagConstraints);
+
+        jScrollPane1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Danh sách lớp đăng ký nguyện vọng", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 0, 14))); // NOI18N
 
         tblCourseClassList.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -65,7 +190,7 @@ public class RegisterCourseFrm extends javax.swing.JFrame {
                 java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
             };
             boolean[] canEdit = new boolean [] {
-                false, true, true, true, true, true, true, true
+                false, false, false, false, false, false, false, false
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -94,106 +219,23 @@ public class RegisterCourseFrm extends javax.swing.JFrame {
             tblCourseClassList.getColumnModel().getColumn(7).setPreferredWidth(10);
         }
 
-        javax.swing.GroupLayout pnlCourseClassListLayout = new javax.swing.GroupLayout(pnlCourseClassList);
-        pnlCourseClassList.setLayout(pnlCourseClassListLayout);
-        pnlCourseClassListLayout.setHorizontalGroup(
-            pnlCourseClassListLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlCourseClassListLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 506, Short.MAX_VALUE)
-                .addContainerGap())
-        );
-        pnlCourseClassListLayout.setVerticalGroup(
-            pnlCourseClassListLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlCourseClassListLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
-        );
-
-        btnAddCourseClass.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
-        btnAddCourseClass.setText("Thêm lớp học");
-        btnAddCourseClass.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnAddCourseClassActionPerformed(evt);
-            }
-        });
-
-        btnRegister.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
-        btnRegister.setText("Đăng kí");
-        btnRegister.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnRegisterActionPerformed(evt);
-            }
-        });
-
-        pnlStudentInfo.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Thông tin học viên", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 0, 14))); // NOI18N
-
-        lblFullName.setBackground(new java.awt.Color(255, 255, 255));
-        lblFullName.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
-        lblFullName.setText("Họ tên:");
-
-        lblDateOfBirth.setBackground(new java.awt.Color(255, 255, 255));
-        lblDateOfBirth.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
-        lblDateOfBirth.setText("Ngày sinh:");
-
-        lblPhone.setBackground(new java.awt.Color(255, 255, 255));
-        lblPhone.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
-        lblPhone.setText("SĐT:");
-
-        lblIDCard.setBackground(new java.awt.Color(255, 255, 255));
-        lblIDCard.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
-        lblIDCard.setText("CCCD:");
-
-        lblAddress.setBackground(new java.awt.Color(255, 255, 255));
-        lblAddress.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
-        lblAddress.setText("Địa chỉ:");
-
-        javax.swing.GroupLayout pnlStudentInfoLayout = new javax.swing.GroupLayout(pnlStudentInfo);
-        pnlStudentInfo.setLayout(pnlStudentInfoLayout);
-        pnlStudentInfoLayout.setHorizontalGroup(
-            pnlStudentInfoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(pnlStudentInfoLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(pnlStudentInfoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lblFullName, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblDateOfBirth, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblPhone, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblIDCard, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblAddress, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        pnlStudentInfoLayout.setVerticalGroup(
-            pnlStudentInfoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(pnlStudentInfoLayout.createSequentialGroup()
-                .addComponent(lblFullName)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(lblDateOfBirth)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(lblPhone)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(lblIDCard)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(lblAddress))
-        );
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
                         .addComponent(btnAddCourseClass)
-                        .addGap(26, 26, 26)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(btnRegister))
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                        .addGap(17, 17, 17)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(pnlStudentInfo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(pnlCourseClassList, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-                .addContainerGap(20, Short.MAX_VALUE))
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 538, Short.MAX_VALUE))))
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -201,12 +243,12 @@ public class RegisterCourseFrm extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(pnlStudentInfo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(pnlCourseClassList, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 277, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(btnAddCourseClass)
                     .addComponent(btnRegister))
-                .addContainerGap(14, Short.MAX_VALUE))
+                .addContainerGap())
         );
 
         pack();
@@ -231,7 +273,7 @@ public class RegisterCourseFrm extends javax.swing.JFrame {
          */
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
+                if ("Windows".equals(info.getName())) {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
                     break;
                 }
@@ -248,13 +290,19 @@ public class RegisterCourseFrm extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAddCourseClass;
     private javax.swing.JButton btnRegister;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lblAddress;
     private javax.swing.JLabel lblDateOfBirth;
+    private javax.swing.JLabel lblEmail;
     private javax.swing.JLabel lblFullName;
     private javax.swing.JLabel lblIDCard;
     private javax.swing.JLabel lblPhone;
-    private javax.swing.JPanel pnlCourseClassList;
     private javax.swing.JPanel pnlStudentInfo;
     private javax.swing.JTable tblCourseClassList;
     // End of variables declaration//GEN-END:variables

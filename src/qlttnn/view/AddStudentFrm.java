@@ -37,21 +37,24 @@ public class AddStudentFrm extends javax.swing.JFrame {
     private void initComponents() {
 
         pnlStudentInfo = new javax.swing.JPanel();
-        lblFullName = new javax.swing.JLabel();
-        lblDateOfBirth = new javax.swing.JLabel();
-        lblPhone = new javax.swing.JLabel();
-        lblIDCard = new javax.swing.JLabel();
-        lblAddress = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
         txtFullName = new javax.swing.JTextField();
         txtDateOfBirth = new javax.swing.JTextField();
         txtPhone = new javax.swing.JTextField();
         txtIDCard = new javax.swing.JTextField();
         txtAddress = new javax.swing.JTextField();
         txtEmail = new javax.swing.JTextField();
-        lblEmail = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
+        errFullName = new javax.swing.JLabel();
+        errDateOfBirth = new javax.swing.JLabel();
+        errPhone = new javax.swing.JLabel();
+        errIDCard = new javax.swing.JLabel();
+        errEmail = new javax.swing.JLabel();
+        errAddress = new javax.swing.JLabel();
         btnSave = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -61,47 +64,60 @@ public class AddStudentFrm extends javax.swing.JFrame {
         pnlStudentInfo.setBorder(javax.swing.BorderFactory.createTitledBorder("Nhập thông tin học viên"));
         pnlStudentInfo.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
 
-        lblFullName.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
-        lblFullName.setText("<html>Họ tên: <font color='red'>*</font></html>");
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jLabel1.setText("Họ tên:");
 
-        lblDateOfBirth.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
-        lblDateOfBirth.setText("<html>Ngày sinh: <font color='red'>*</font></html>");
+        jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jLabel2.setText("Ngày sinh:");
 
-        lblPhone.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
-        lblPhone.setText("<html>SĐT:  <font color='red'>*</font></html>");
+        jLabel3.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jLabel3.setText("SĐT:");
 
-        lblIDCard.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
-        lblIDCard.setText("<html>CCCD: <font color='red'>*</font></html>");
+        jLabel4.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jLabel4.setText("CCCD:");
 
-        lblAddress.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
-        lblAddress.setText("<html>Địa chỉ: <font color='red'>*</font></html>");
+        jLabel5.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel5.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jLabel5.setText("Email");
 
-        txtFullName.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
+        jLabel6.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jLabel6.setText("Địa chỉ");
 
-        txtDateOfBirth.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
+        txtFullName.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
 
-        txtPhone.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
+        txtDateOfBirth.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
 
-        txtIDCard.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
+        txtPhone.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
 
-        txtAddress.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
+        txtIDCard.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
 
-        txtEmail.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
-        txtEmail.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtEmailActionPerformed(evt);
-            }
-        });
+        txtAddress.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
 
-        lblEmail.setBackground(new java.awt.Color(255, 255, 255));
-        lblEmail.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        lblEmail.setText("Email:");
+        txtEmail.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
 
-        jLabel1.setText("jLabel1");
+        errFullName.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
+        errFullName.setForeground(new java.awt.Color(255, 0, 0));
+        errFullName.setText("jLabel4");
 
-        jLabel2.setText("jLabel2");
+        errDateOfBirth.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
+        errDateOfBirth.setForeground(new java.awt.Color(255, 0, 0));
+        errDateOfBirth.setText("jLabel5");
 
-        jLabel3.setText("jLabel3");
+        errPhone.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
+        errPhone.setForeground(new java.awt.Color(255, 0, 0));
+        errPhone.setText("jLabel6");
+
+        errIDCard.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
+        errIDCard.setForeground(new java.awt.Color(255, 0, 0));
+        errIDCard.setText("jLabel7");
+
+        errEmail.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
+        errEmail.setForeground(new java.awt.Color(255, 0, 0));
+        errEmail.setText("jLabel8");
+
+        errAddress.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
+        errAddress.setForeground(new java.awt.Color(255, 0, 0));
+        errAddress.setText("jLabel9");
 
         javax.swing.GroupLayout pnlStudentInfoLayout = new javax.swing.GroupLayout(pnlStudentInfo);
         pnlStudentInfo.setLayout(pnlStudentInfoLayout);
@@ -110,69 +126,85 @@ public class AddStudentFrm extends javax.swing.JFrame {
             .addGroup(pnlStudentInfoLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(pnlStudentInfoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlStudentInfoLayout.createSequentialGroup()
-                        .addGap(0, 90, Short.MAX_VALUE)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 262, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(pnlStudentInfoLayout.createSequentialGroup()
                         .addGroup(pnlStudentInfoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(lblDateOfBirth, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(lblAddress, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(lblPhone, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(lblIDCard, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(lblEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(lblFullName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(10, 10, 10)
+                            .addComponent(jLabel2)
+                            .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(pnlStudentInfoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtEmail)
-                            .addComponent(txtIDCard)
-                            .addComponent(txtPhone)
                             .addComponent(txtDateOfBirth)
-                            .addComponent(txtAddress, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(txtFullName)
+                            .addComponent(txtPhone)
+                            .addComponent(txtIDCard)
+                            .addComponent(errFullName, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addGroup(pnlStudentInfoLayout.createSequentialGroup()
                                 .addGroup(pnlStudentInfoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(0, 0, Short.MAX_VALUE)))))
+                                    .addComponent(errIDCard, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(errPhone, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(errDateOfBirth, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(0, 0, Short.MAX_VALUE))))
+                    .addGroup(pnlStudentInfoLayout.createSequentialGroup()
+                        .addGroup(pnlStudentInfoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel6))
+                        .addGap(30, 30, 30)
+                        .addGroup(pnlStudentInfoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(txtAddress, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(txtEmail)
+                            .addGroup(pnlStudentInfoLayout.createSequentialGroup()
+                                .addGroup(pnlStudentInfoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(errAddress, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(errEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(0, 0, Short.MAX_VALUE))))
+                    .addGroup(pnlStudentInfoLayout.createSequentialGroup()
+                        .addComponent(jLabel4)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(pnlStudentInfoLayout.createSequentialGroup()
+                        .addComponent(jLabel1)
+                        .addGap(26, 26, 26)
+                        .addComponent(txtFullName)))
                 .addContainerGap())
         );
         pnlStudentInfoLayout.setVerticalGroup(
             pnlStudentInfoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlStudentInfoLayout.createSequentialGroup()
-                .addGap(19, 19, 19)
                 .addGroup(pnlStudentInfoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblFullName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel1)
                     .addComponent(txtFullName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(2, 2, 2)
-                .addComponent(jLabel1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(errFullName)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(pnlStudentInfoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblDateOfBirth, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel2)
                     .addComponent(txtDateOfBirth, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(2, 2, 2)
-                .addComponent(jLabel2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(errDateOfBirth)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(pnlStudentInfoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblPhone, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel3)
                     .addComponent(txtPhone, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(4, 4, 4)
-                .addComponent(jLabel3)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(errPhone)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(pnlStudentInfoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblIDCard, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel4)
                     .addComponent(txtIDCard, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(errIDCard)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(pnlStudentInfoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtEmail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblEmail))
-                .addGap(18, 18, 18)
-                .addGroup(pnlStudentInfoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lblAddress, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel5)
+                    .addComponent(txtEmail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(errEmail)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(pnlStudentInfoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel6)
                     .addComponent(txtAddress, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(85, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(errAddress))
         );
 
-        btnSave.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
+        btnSave.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         btnSave.setText("Lưu");
         btnSave.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -187,19 +219,19 @@ public class AddStudentFrm extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addGap(0, 302, Short.MAX_VALUE)
                         .addComponent(btnSave))
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(pnlStudentInfo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE)))
+                        .addContainerGap()
+                        .addComponent(pnlStudentInfo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(pnlStudentInfo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(pnlStudentInfo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(btnSave)
                 .addContainerGap())
         );
@@ -221,10 +253,6 @@ public class AddStudentFrm extends javax.swing.JFrame {
         
     }//GEN-LAST:event_btnSaveActionPerformed
 
-    private void txtEmailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtEmailActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtEmailActionPerformed
-
     /**
      * @param args the command line arguments
      */
@@ -236,7 +264,7 @@ public class AddStudentFrm extends javax.swing.JFrame {
          */
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
+                if ("Windows".equals(info.getName())) {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
                     break;
                 }
@@ -252,15 +280,18 @@ public class AddStudentFrm extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnSave;
+    private javax.swing.JLabel errAddress;
+    private javax.swing.JLabel errDateOfBirth;
+    private javax.swing.JLabel errEmail;
+    private javax.swing.JLabel errFullName;
+    private javax.swing.JLabel errIDCard;
+    private javax.swing.JLabel errPhone;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel lblAddress;
-    private javax.swing.JLabel lblDateOfBirth;
-    private javax.swing.JLabel lblEmail;
-    private javax.swing.JLabel lblFullName;
-    private javax.swing.JLabel lblIDCard;
-    private javax.swing.JLabel lblPhone;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel pnlStudentInfo;
     private javax.swing.JTextField txtAddress;
     private javax.swing.JTextField txtDateOfBirth;
