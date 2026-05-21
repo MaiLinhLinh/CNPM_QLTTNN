@@ -10,13 +10,13 @@ public class Bill {
     private User user;
     private Registering registering;
 
-    public Bill(LocalDateTime createdAt, double payedAmount, String paymentType, User user, Registering registering) {
+    public Bill(LocalDateTime createdAt, double payedAmount, String paymentType, Registering registering) {
         this.createdAt = createdAt;
         this.payedAmount = payedAmount;
         this.paymentType = paymentType;
-        this.user = user;
         this.registering = registering;
     }
+
 
     public int getId() {
         return id;

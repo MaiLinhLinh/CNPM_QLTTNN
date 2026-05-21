@@ -4,10 +4,29 @@ public class ClassRoom {
     private int id;
     private int capacity;
     private String roomName;
+    private Branch branch;
 
     public ClassRoom(int capacity, String roomName) {
         this.capacity = capacity;
         this.roomName = roomName;
+    }
+
+    public ClassRoom(int id, int capacity, String roomName, Branch branch) {
+        this.id = id;
+        this.capacity = capacity;
+        this.roomName = roomName;
+        this.branch = branch;
+    }
+
+    public ClassRoom() {
+    }
+
+    public Branch getBranch() {
+        return branch;
+    }
+
+    public void setBranch(Branch branch) {
+        this.branch = branch;
     }
 
     public int getId() {

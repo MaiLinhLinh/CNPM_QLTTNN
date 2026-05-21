@@ -2,14 +2,17 @@ package qlttnn.model;
 
 public class RegisteredSession {
     private int id;
-    private String status;
+    private double payRate;
     private Session session;
+    private TeachingRegistration teachingRegistration;
 
-    public RegisteredSession(int id, String status, Session session) {
+    public RegisteredSession(int id, double payRate, Session session, TeachingRegistration teachingRegistration) {
         this.id = id;
-        this.status = status;
+        this.payRate = payRate;
         this.session = session;
+        this.teachingRegistration = teachingRegistration;
     }
+
 
     public int getId() {
         return id;
@@ -19,12 +22,20 @@ public class RegisteredSession {
         this.id = id;
     }
 
-    public String getStatus() {
-        return status;
+    public double getPayRate() {
+        return payRate;
     }
 
-    public void setStatus(String status) {
-        this.status = status;
+    public void setPayRate(double payRate) {
+        this.payRate = payRate;
+    }
+
+    public TeachingRegistration getTeachingRegistration() {
+        return teachingRegistration;
+    }
+
+    public void setTeachingRegistration(TeachingRegistration teachingRegistration) {
+        this.teachingRegistration = teachingRegistration;
     }
 
     public Session getSession() {

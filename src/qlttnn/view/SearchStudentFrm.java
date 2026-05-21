@@ -5,12 +5,15 @@
 package qlttnn.view;
 
 import qlttnn.dao.StudentDAO;
+import qlttnn.model.Registering;
 import qlttnn.model.Student;
 import qlttnn.model.User;
 
 import javax.swing.table.DefaultTableModel;
 import java.awt.event.KeyEvent;
 import java.util.ArrayList;
+
+import static javax.swing.SwingUtilities.isLeftMouseButton;
 
 /**
  *
@@ -45,10 +48,9 @@ public class SearchStudentFrm extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         tblStudentList = new javax.swing.JTable();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Tìm học viên");
         setBackground(new java.awt.Color(255, 255, 255));
-        setPreferredSize(new java.awt.Dimension(600, 400));
 
         pnlSearchStudent.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Tìm kiếm", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 0, 14))); // NOI18N
         pnlSearchStudent.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
@@ -120,6 +122,11 @@ public class SearchStudentFrm extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
+        tblStudentList.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tblStudentListMouseClicked(evt);
+            }
+        });
         jScrollPane1.setViewportView(tblStudentList);
         if (tblStudentList.getColumnModel().getColumnCount() > 0) {
             tblStudentList.getColumnModel().getColumn(0).setPreferredWidth(5);
@@ -157,7 +164,6 @@ public class SearchStudentFrm extends javax.swing.JFrame {
 
     private void btnAddStudentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddStudentActionPerformed
         // TODO add your handling code here:
-        this.dispose();
         AddStudentFrm addStudentFrm = new AddStudentFrm(user);
         addStudentFrm.setVisible(true);
     }//GEN-LAST:event_btnAddStudentActionPerformed
@@ -190,6 +196,22 @@ public class SearchStudentFrm extends javax.swing.JFrame {
             btnSearch.doClick();
         }
     }//GEN-LAST:event_txtSearchKeyKeyPressed
+
+    private void tblStudentListMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblStudentListMouseClicked
+        // TODO add your handling code here:
+        int row = tblStudentList.rowAtPoint(evt.getPoint());
+        if(row == -1)
+            return;
+        if(isLeftMouseButton(evt) && evt.getClickCount() == 2){
+            Student student = this.students.get(row);
+            Registering registering = new Registering();
+            registering.setStudent(student);
+            registering.setUser(user);
+            this.dispose();
+            RegisterCourseFrm registerCourseFrm = new RegisterCourseFrm(registering);
+            registerCourseFrm.setVisible(true);
+        }
+    }//GEN-LAST:event_tblStudentListMouseClicked
 
     /**
      * @param args the command line arguments

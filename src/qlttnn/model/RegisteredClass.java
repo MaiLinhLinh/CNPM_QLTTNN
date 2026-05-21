@@ -14,6 +14,13 @@ public class RegisteredClass {
         this.saleOff = saleOff;
         this.finalTuition = this.tuition - this.saleOff;
     }
+
+    public RegisteredClass(CourseClass courseClass, double tuition, double saleOff) {
+        this.tuition = tuition;
+        this.saleOff = saleOff;
+        this.courseClass = courseClass;
+    }
+
     public double getFinalTuition(){
         return finalTuition;
     }

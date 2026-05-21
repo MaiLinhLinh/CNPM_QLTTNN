@@ -4,7 +4,17 @@
  */
 package qlttnn.view;
 
-import qlttnn.model.Registering;
+import qlttnn.dao.BillDAO;
+import qlttnn.dao.UserDAO;
+import qlttnn.model.*;
+
+import javax.swing.table.DefaultTableModel;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  *
@@ -14,12 +24,76 @@ public class BillFrm extends javax.swing.JFrame {
     
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(BillFrm.class.getName());
     private Registering registering;
+    private Bill bill;
+    DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm");
+    DateTimeFormatter dateFormatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");  // THÊM
+    private Map<Integer, User> teacherMap;
+    private RegisterCourseFrm registerCourseFrm;
     /**
      * Creates new form BillFrm
      */
-    public BillFrm(Registering registering) {
+    public BillFrm(Registering registering, RegisterCourseFrm registerCourseFrm) {
         initComponents();
         this.registering = registering;
+        this.registerCourseFrm = registerCourseFrm;
+        Student student = registering.getStudent();
+        UserDAO userDAO = new UserDAO();
+        teacherMap = new HashMap<>();
+        lblEnrollmentStaff.setText(registering.getUser().getFullName());
+        lblBillingDate.setText(LocalDateTime.now().format(formatter));
+        lblFullName.setText(student.getFullName());
+        lblDateOfBirth.setText(student.getDateOfBirth().format(dateFormatter));
+        lblIDCard.setText(student.getIdCard());
+        lblEmail.setText(student.getEmail());
+        lblAddress.setText(student.getAddress());
+        lblToltalTuition.setText(String.valueOf(registering.getTotalTuition()));
+        lblSaleOff.setText(String.valueOf(registering.getSaleOff()));
+
+
+
+        DefaultTableModel defaultTableModel = (DefaultTableModel) tblRegisteredClass.getModel();
+        defaultTableModel.setRowCount(0);
+        int stt = 0;
+        ArrayList<RegisteredClass> registeredClasses = this.registering.getRegisteredClasses();
+        // Load teacher cho TẤT CẢ sessions của tất cả các registeredClass
+        for (RegisteredClass rc : registeredClasses) {
+            CourseClass cc = rc.getCourseClass();
+            Map<Integer, User> classTeachers = userDAO.getTeacherForSessions(cc);
+            teacherMap.putAll(classTeachers);
+        }
+        for (RegisteredClass rc: registeredClasses){
+            CourseClass cc = rc.getCourseClass();
+            Level level = cc.getLevel();
+            Program program = level.getProgram();
+            defaultTableModel.addRow(new Object[]{
+                    ++stt,
+                    cc.getClassName(),
+                    program.getProgramName(),
+                    level.getLevelName(),
+                    cc.getBranch().getBranchName(),
+                    cc.getStartDate(),
+                    cc.getLevel().getTuition()
+            });
+        }
+        DefaultTableModel defaultTableModelSession = (DefaultTableModel) tblSessionList.getModel();
+        defaultTableModelSession.setRowCount(0);
+        int st = 0;
+        for (RegisteredClass rc: registeredClasses){
+            CourseClass cc = rc.getCourseClass();
+            ArrayList<Session> sessions = cc.getSessions();
+            for(Session session: sessions) {
+                Shift shift = session.getShift();
+                defaultTableModelSession.addRow(new Object[]{
+                        ++st,
+                        cc.getClassName(),
+                        session.getDate(),
+                        shift.getShiftName(),
+                        teacherMap.get(session.getId()).getFullName(),
+                        session.getSkill(),
+                        session.getClassRoom().getRoomName()
+                });
+            }
+        }
 
     }
 
@@ -56,18 +130,18 @@ public class BillFrm extends javax.swing.JFrame {
         jScrollPane3 = new javax.swing.JScrollPane();
         tblSessionList = new javax.swing.JTable();
         jPanel3 = new javax.swing.JPanel();
-        lblSale = new javax.swing.JLabel();
-        lblTotalTuition = new javax.swing.JLabel();
+        jlabel10 = new javax.swing.JLabel();
+        jlabel9 = new javax.swing.JLabel();
         lblPaymentAmount = new javax.swing.JLabel();
         cbxPaymentType = new javax.swing.JComboBox<>();
         txtPaymentAmount = new javax.swing.JTextField();
         lblPaymentType = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
-        jLabel10 = new javax.swing.JLabel();
+        lblToltalTuition = new javax.swing.JLabel();
+        lblSaleOff = new javax.swing.JLabel();
         btnConfirm = new javax.swing.JButton();
         btnCancel = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Hoá đơn");
         setBackground(new java.awt.Color(255, 255, 255));
 
@@ -109,7 +183,8 @@ public class BillFrm extends javax.swing.JFrame {
 
         lblFullName.setBackground(new java.awt.Color(255, 255, 255));
         lblFullName.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        lblFullName.setText("Hoàng Hoàng Tuấn");
+        lblFullName.setText("Nguyễn Văn Bình");
+        lblFullName.setName(""); // NOI18N
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 2;
         gridBagConstraints.gridy = 0;
@@ -287,23 +362,23 @@ public class BillFrm extends javax.swing.JFrame {
         jPanel3Layout.rowHeights = new int[] {0, 5, 0, 5, 0, 5, 0};
         jPanel3.setLayout(jPanel3Layout);
 
-        lblSale.setBackground(new java.awt.Color(255, 255, 255));
-        lblSale.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        lblSale.setText("Khuyến mãi: ");
+        jlabel10.setBackground(new java.awt.Color(255, 255, 255));
+        jlabel10.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jlabel10.setText("Khuyến mãi: ");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 2;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_START;
-        jPanel3.add(lblSale, gridBagConstraints);
+        jPanel3.add(jlabel10, gridBagConstraints);
 
-        lblTotalTuition.setBackground(new java.awt.Color(255, 255, 255));
-        lblTotalTuition.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        lblTotalTuition.setText("Tổng tiền học phí:");
+        jlabel9.setBackground(new java.awt.Color(255, 255, 255));
+        jlabel9.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jlabel9.setText("Tổng tiền học phí:");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 0;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_START;
-        jPanel3.add(lblTotalTuition, gridBagConstraints);
+        jPanel3.add(jlabel9, gridBagConstraints);
 
         lblPaymentAmount.setBackground(new java.awt.Color(255, 255, 255));
         lblPaymentAmount.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
@@ -342,25 +417,25 @@ public class BillFrm extends javax.swing.JFrame {
         gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_START;
         jPanel3.add(lblPaymentType, gridBagConstraints);
 
-        jLabel9.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jLabel9.setText("100.000.000 VNĐ");
+        lblToltalTuition.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        lblToltalTuition.setText("100.000.000 VNĐ");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 2;
         gridBagConstraints.gridy = 0;
         gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_START;
         gridBagConstraints.weightx = 1.0;
-        jPanel3.add(jLabel9, gridBagConstraints);
+        jPanel3.add(lblToltalTuition, gridBagConstraints);
 
-        jLabel10.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jLabel10.setText("50%");
+        lblSaleOff.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        lblSaleOff.setText("50%");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 2;
         gridBagConstraints.gridy = 2;
         gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_START;
         gridBagConstraints.weightx = 1.0;
-        jPanel3.add(jLabel10, gridBagConstraints);
+        jPanel3.add(lblSaleOff, gridBagConstraints);
 
         btnConfirm.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         btnConfirm.setText("Xác nhận");
@@ -422,10 +497,21 @@ public class BillFrm extends javax.swing.JFrame {
 
     private void btnConfirmActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConfirmActionPerformed
         // TODO add your handling code here:
+         this.bill = new Bill(LocalDateTime.now(), Double.parseDouble(txtPaymentAmount.getText()), cbxPaymentType.getSelectedItem().toString(), registering);
+         BillDAO billDAO = new BillDAO();
+         if(billDAO.createBill(this.bill)){
+             javax.swing.JOptionPane.showMessageDialog(this, "Thanh toán thành công!");
+             this.dispose();
+             this.registerCourseFrm.dispose();
+         }else{
+             javax.swing.JOptionPane.showMessageDialog(this, "Thanh toán thất bại!");
+         }
     }//GEN-LAST:event_btnConfirmActionPerformed
 
     private void btnCancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelActionPerformed
         // TODO add your handling code here:
+        this.dispose();
+
     }//GEN-LAST:event_btnCancelActionPerformed
 
     /**
@@ -450,7 +536,7 @@ public class BillFrm extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(() -> new BillFrm(null).setVisible(true));
+        java.awt.EventQueue.invokeLater(() -> new BillFrm(null, null).setVisible(true));
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -458,7 +544,6 @@ public class BillFrm extends javax.swing.JFrame {
     private javax.swing.JButton btnConfirm;
     private javax.swing.JComboBox<String> cbxPaymentType;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -466,12 +551,13 @@ public class BillFrm extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JLabel jlabel10;
+    private javax.swing.JLabel jlabel9;
     private javax.swing.JLabel lblAddress;
     private javax.swing.JLabel lblBillingDate;
     private javax.swing.JLabel lblDateOfBirth;
@@ -482,8 +568,8 @@ public class BillFrm extends javax.swing.JFrame {
     private javax.swing.JLabel lblPaymentAmount;
     private javax.swing.JLabel lblPaymentType;
     private javax.swing.JLabel lblPhone;
-    private javax.swing.JLabel lblSale;
-    private javax.swing.JLabel lblTotalTuition;
+    private javax.swing.JLabel lblSaleOff;
+    private javax.swing.JLabel lblToltalTuition;
     private javax.swing.JTable tblRegisteredClass;
     private javax.swing.JTable tblSessionList;
     private javax.swing.JTextField txtPaymentAmount;

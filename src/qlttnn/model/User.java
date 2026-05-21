@@ -4,13 +4,13 @@ import java.util.Date;
 
 public class User {
     private int id;
-    private String username;
-    private String password;
-    private String fullName;
-    private Date dateOfBirth;
-    private String phone;
-    private String address;
-    private String role;
+    protected String username;
+    protected String password;
+    protected String fullName;
+    protected Date dateOfBirth;
+    protected String phone;
+    protected String address;
+    protected String role;
 
     public User() {
     }
@@ -20,8 +20,25 @@ public class User {
         this.password = password;
     }
 
+    public User(String fullName, Date dateOfBirth, String phone, String address) {
+        this.fullName = fullName;
+        this.dateOfBirth = dateOfBirth;
+        this.phone = phone;
+        this.address = address;
+    }
+
     public User(int id, String username, String password, String fullName, Date dateOfBirth, String phone, String address, String role) {
         this.id = id;
+        this.username = username;
+        this.password = password;
+        this.fullName = fullName;
+        this.dateOfBirth = dateOfBirth;
+        this.phone = phone;
+        this.address = address;
+        this.role = role;
+    }
+
+    public User(String username, String password, String fullName, Date dateOfBirth, String phone, String address, String role) {
         this.username = username;
         this.password = password;
         this.fullName = fullName;

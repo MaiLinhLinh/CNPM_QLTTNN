@@ -13,6 +13,12 @@ public class Branch {
         this.address = address;
     }
 
+    public Branch(int id, String branchName, String address) {
+        this.id = id;
+        this.branchName = branchName;
+        this.address = address;
+    }
+
     public String getBranchName() {
         return branchName;
     }

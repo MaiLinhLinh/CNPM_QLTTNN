@@ -4,6 +4,19 @@
  */
 package qlttnn.view;
 
+import qlttnn.dao.LevelDAO;
+import qlttnn.dao.ProgramDAO;
+import qlttnn.model.Level;
+import qlttnn.model.Program;
+import qlttnn.model.Registering;
+import qlttnn.model.Student;
+
+
+import javax.swing.table.DefaultTableModel;
+import java.util.ArrayList;
+
+import static javax.swing.SwingUtilities.isLeftMouseButton;
+
 /**
  *
  * @author ASUS
@@ -11,12 +24,22 @@ package qlttnn.view;
 public class SelectProgramLevelFrm extends javax.swing.JFrame {
     
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(SelectProgramLevelFrm.class.getName());
-
+    private Registering registering;
+    private ArrayList<Program> programs = new ArrayList<>();
+    private ArrayList<Level> levels = new ArrayList<>();
+    private RegisterCourseFrm registerCourseFrm;
     /**
      * Creates new form SelectProgramLevelFrm
      */
-    public SelectProgramLevelFrm() {
+    public SelectProgramLevelFrm(Registering registering, RegisterCourseFrm registerCourseFrm) {
         initComponents();
+        this.registering = registering;
+        this.registerCourseFrm = registerCourseFrm;
+        loadProgramData();
+
+    }
+    public SelectProgramLevelFrm(){
+
     }
 
     /**
@@ -34,7 +57,7 @@ public class SelectProgramLevelFrm extends javax.swing.JFrame {
         tblLevelList = new javax.swing.JTable();
         btnBack = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Chọn chương trình và mức độ");
         setBackground(new java.awt.Color(255, 255, 255));
 
@@ -42,7 +65,7 @@ public class SelectProgramLevelFrm extends javax.swing.JFrame {
 
         cbxProgram.setEditable(true);
         cbxProgram.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        cbxProgram.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "IELTS", "TOEIC LR", "TOEIC RW", "TOEFL" }));
+        //cbxProgram.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "IELTS", "TOEIC LR", "TOEIC RW", "TOEFL" }));
         cbxProgram.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cbxProgramActionPerformed(evt);
@@ -93,6 +116,11 @@ public class SelectProgramLevelFrm extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
+        tblLevelList.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tblLevelListMouseClicked(evt);
+            }
+        });
         jScrollPane2.setViewportView(tblLevelList);
         if (tblLevelList.getColumnModel().getColumnCount() > 0) {
             tblLevelList.getColumnModel().getColumn(0).setMinWidth(50);
@@ -137,13 +165,58 @@ public class SelectProgramLevelFrm extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void loadProgramData(){
+        ProgramDAO programDAO = new ProgramDAO();
+        programs = programDAO.getProgramList();
+        cbxProgram.removeAllItems();
+        for(Program program: programs){
+            cbxProgram.addItem(program);
+        }
+    }
     private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
         // TODO add your handling code here:
+        this.dispose();
+
     }//GEN-LAST:event_btnBackActionPerformed
 
     private void cbxProgramActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbxProgramActionPerformed
         // TODO add your handling code here:
+        if (cbxProgram.getItemCount() > 0 && cbxProgram.getSelectedIndex() != -1) {
+            Program selectedProgram = (Program) cbxProgram.getSelectedItem();
+            if (selectedProgram != null) {
+                LevelDAO levelDAO = new LevelDAO();
+                levels = levelDAO.getLevelList(selectedProgram);
+
+                DefaultTableModel defaultTableModel = (DefaultTableModel) tblLevelList.getModel();
+                defaultTableModel.setRowCount(0);
+                int stt = 0;
+                for (Level level : levels) {
+                    defaultTableModel.addRow(new Object[]{
+                            ++stt,
+                            level.getLevelName(),
+                            level.getEntryLevel(),
+                            level.getTargetLevel(),
+                            level.getTotalSessions(),
+                            level.getTuition()
+                    });
+                }
+
+            }
+        }
+
     }//GEN-LAST:event_cbxProgramActionPerformed
+
+    private void tblLevelListMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblLevelListMouseClicked
+        // TODO add your handling code here:
+        int row = tblLevelList.rowAtPoint(evt.getPoint());
+        if(row == -1)
+            return;
+        if(isLeftMouseButton(evt) && evt.getClickCount() == 2){
+            Level level = this.levels.get (row);
+            SelectCourseClassFrm selectCourseClassFrm = new SelectCourseClassFrm(this.registering, level, this.registerCourseFrm, this);
+            selectCourseClassFrm.setVisible(true);
+        }
+    }//GEN-LAST:event_tblLevelListMouseClicked
 
     /**
      * @param args the command line arguments
@@ -167,12 +240,12 @@ public class SelectProgramLevelFrm extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(() -> new SelectProgramLevelFrm().setVisible(true));
+        java.awt.EventQueue.invokeLater(() -> new SelectProgramLevelFrm(new Registering(), new RegisterCourseFrm()).setVisible(true));
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnBack;
-    private javax.swing.JComboBox<String> cbxProgram;
+    private javax.swing.JComboBox<Program> cbxProgram;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JPanel pnlSelectProgram;
     private javax.swing.JTable tblLevelList;

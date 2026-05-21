@@ -1,0 +1,35 @@
+
+# =========================
+# Không đưa file build của NetBeans
+# =========================
+build/
+dist/
+
+# =========================
+# Không đưa database nếu bạn không muốn đẩy SQL lên GitHub
+# Nếu muốn giữ folder database thì xoá dòng này
+# =========================
+database/
+
+# =========================
+# Không đưa test nếu bạn không muốn hiện folder test
+# Nếu muốn giữ test thì xoá dòng này
+# =========================
+test/
+
+# =========================
+# Không đưa file project riêng của IntelliJ
+# =========================
+*.iml
+
+# =========================
+# File biên dịch Java
+# =========================
+*.class
+
+# =========================
+# File log, file tạm
+# =========================
+*.log
+.DS_Store
+Thumbs.db

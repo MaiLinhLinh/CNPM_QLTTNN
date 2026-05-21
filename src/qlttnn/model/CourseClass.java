@@ -1,5 +1,7 @@
 package qlttnn.model;
 
+import qlttnn.dao.CourseClassDAO;
+
 import java.time.LocalDate;
 import java.util.ArrayList;
 
@@ -11,13 +13,44 @@ public class CourseClass {
     private ArrayList<Session> sessions;
     private Level level;
     private Branch branch;
+    private String day;
+    private String shiftDay;
 
-    public CourseClass(String className, int maxStudents, LocalDate startDate, Level level, Branch branch) {
+    public CourseClass(int id, String className, int maxStudents, LocalDate startDate, Level level, Branch branch) {
+        this.id = id;
         this.className = className;
         this.maxStudents = maxStudents;
         this.startDate = startDate;
         this.level = level;
         this.branch = branch;
+    }
+
+    public CourseClass(int id, String className, int maxStudents, LocalDate startDate, Level level, Branch branch, ArrayList<Session> sessions) {
+        this.id = id;
+        this.className = className;
+        this.maxStudents = maxStudents;
+        this.startDate = startDate;
+        this.level = level;
+        this.branch = branch;
+        this.sessions = sessions;
+
+    }
+
+
+    public String getDay() {
+        return day;
+    }
+
+    public void setDay(String day) {
+        this.day = day;
+    }
+
+    public String getShiftDay() {
+        return shiftDay;
+    }
+
+    public void setShiftDay(String shiftDay) {
+        this.shiftDay = shiftDay;
     }
 
     public int getId() {
@@ -35,6 +68,7 @@ public class CourseClass {
     public void setClassName(String className) {
         this.className = className;
     }
+
 
     public int getMaxStudents() {
         return maxStudents;

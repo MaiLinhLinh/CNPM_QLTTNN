@@ -36,7 +36,7 @@ public class EnrollmentStaffFrm extends javax.swing.JFrame {
         btnRegisterCourse = new javax.swing.JButton();
         lblEnrollmentStaffName = new javax.swing.JLabel();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Trang chủ");
         setBackground(new java.awt.Color(255, 255, 255));
 
@@ -90,7 +90,6 @@ public class EnrollmentStaffFrm extends javax.swing.JFrame {
 
     private void btnRegisterCourseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegisterCourseActionPerformed
         // TODO add your handling code here:
-        this.dispose();
         SearchStudentFrm searchStudentFrm = new SearchStudentFrm(user);
         searchStudentFrm.setVisible(true);
     }//GEN-LAST:event_btnRegisterCourseActionPerformed

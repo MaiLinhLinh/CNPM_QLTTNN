@@ -6,6 +6,8 @@ package qlttnn;
 
 import qlttnn.view.LoginFrm;
 
+
+
 /**
  *
  * @author ASUS
@@ -17,8 +19,21 @@ public class QLTTNN {
      */
     public static void main(String[] args) {
         // Hiển thị giao diện đăng nhập
-        LoginFrm loginFrm = new LoginFrm();
-        loginFrm.setVisible(true);
+        try {
+            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+                if ("Windows".equals(info.getName())) {
+                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+                    break;
+                }
+            }
+        } catch (Exception e){
+
+
+        }
+        //</editor-fold>
+
+        /* Create and display the form */
+        java.awt.EventQueue.invokeLater(() -> new LoginFrm().setVisible(true));
     }
     
 }

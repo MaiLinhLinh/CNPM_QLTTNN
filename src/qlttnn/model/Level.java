@@ -24,7 +24,7 @@ public class Level {
         this.program = program;
     }
 
-    public Level(int id, String levelName, double entryLevel, double targetLevel, double payRate, int totalSessions, double tuition, ArrayList<CourseClass> courseClasses, Program program) {
+    public Level(int id, String levelName, double entryLevel, double targetLevel, double payRate, int totalSessions, double tuition, Program program) {
         this.id = id;
         this.levelName = levelName;
         this.entryLevel = entryLevel;
@@ -32,7 +32,15 @@ public class Level {
         this.payRate = payRate;
         this.totalSessions = totalSessions;
         this.tuition = tuition;
-        this.courseClasses = courseClasses;
+        this.program = program;
+    }
+
+    public Level() {
+    }
+
+    public Level(int id, String levelName, Program program) {
+        this.id = id;
+        this.levelName = levelName;
         this.program = program;
     }
 

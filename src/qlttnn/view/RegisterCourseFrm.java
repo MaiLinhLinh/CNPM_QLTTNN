@@ -4,7 +4,15 @@
  */
 package qlttnn.view;
 
-import qlttnn.model.User;
+import qlttnn.dao.RegisteringDAO;
+import qlttnn.model.*;
+
+import javax.swing.*;
+import javax.swing.table.DefaultTableModel;
+import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
+
+import static javax.swing.SwingUtilities.isRightMouseButton;
 
 /**
  *
@@ -13,13 +21,26 @@ import qlttnn.model.User;
 public class RegisterCourseFrm extends javax.swing.JFrame {
     
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(RegisterCourseFrm.class.getName());
-    private static User user;
+    private Registering registering;
     /**
      * Creates new form RegisterCourseFrm
      */
-    public RegisterCourseFrm(User user) {
+    private ArrayList<RegisteredClass> registeredClasses= new ArrayList<>();
+    private DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+    public RegisterCourseFrm(Registering registering) {
         initComponents();
-        this.user = user;
+        this.registering = registering;
+        this.registeredClasses = this.registering.getRegisteredClasses();
+        Student student = registering.getStudent();
+        this.lblFullName.setText(student.getFullName());
+        this.lblPhone.setText(student.getPhone());
+        this.lblDateOfBirth.setText(student.getDateOfBirth().format(formatter));
+        this.lblIDCard.setText(student.getIdCard());
+        this.lblEmail.setText(student.getEmail());
+        this.lblAddress.setText(student.getAddress());
+    }
+    public RegisterCourseFrm(){
+
     }
 
     /**
@@ -50,7 +71,7 @@ public class RegisterCourseFrm extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         tblCourseClassList = new javax.swing.JTable();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Đăng kí học");
         setBackground(new java.awt.Color(255, 255, 255));
 
@@ -125,7 +146,7 @@ public class RegisterCourseFrm extends javax.swing.JFrame {
         pnlStudentInfo.add(jLabel6, gridBagConstraints);
 
         lblFullName.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        lblFullName.setText("Hoàng Hoàng Tuấn");
+        lblFullName.setText("Nguyễn Văn Bình");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 2;
         gridBagConstraints.gridy = 0;
@@ -201,6 +222,11 @@ public class RegisterCourseFrm extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
+        tblCourseClassList.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tblCourseClassListMouseClicked(evt);
+            }
+        });
         jScrollPane1.setViewportView(tblCourseClassList);
         if (tblCourseClassList.getColumnModel().getColumnCount() > 0) {
             tblCourseClassList.getColumnModel().getColumn(0).setMaxWidth(25);
@@ -256,12 +282,83 @@ public class RegisterCourseFrm extends javax.swing.JFrame {
 
     private void btnAddCourseClassActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddCourseClassActionPerformed
         // TODO add your handling code here:
+        SelectProgramLevelFrm selectProgramLevelFrm = new SelectProgramLevelFrm(registering, this);
+        selectProgramLevelFrm.setVisible(true);
     }//GEN-LAST:event_btnAddCourseClassActionPerformed
 
     private void btnRegisterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegisterActionPerformed
         // TODO add your handling code here:
+        RegisteringDAO registeringDAO = new RegisteringDAO();
+        this.registering.setRegisteringDate(java.time.LocalDateTime.now());
+        if(registeringDAO.addRegistering(this.registering)){
+            javax.swing.JOptionPane.showMessageDialog(this, "Đăng kí học thành công!");
+            BillFrm billFrm = new BillFrm(this.registering, this);
+            billFrm.setVisible(true);
+        }else{
+            javax.swing.JOptionPane.showMessageDialog(this, "Tạo phiếu đăng kí thất bại!");
+        }
+
     }//GEN-LAST:event_btnRegisterActionPerformed
 
+    private void tblCourseClassListMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblCourseClassListMouseClicked
+        // TODO add your handling code here:
+        int row =tblCourseClassList.rowAtPoint(evt.getPoint());
+        if(row == -1){
+            return;
+        }
+        tblCourseClassList.setRowSelectionInterval(row, row);
+        if(isRightMouseButton(evt)){
+            JPopupMenu popupMenu = new JPopupMenu();
+            JMenuItem itemDelete = new JMenuItem("Xoá");
+            popupMenu.add(itemDelete);
+            popupMenu.show(tblCourseClassList, evt.getX(), evt.getY());
+
+            itemDelete.addActionListener(new java.awt.event.ActionListener(){
+                public void actionPerformed(java.awt.event.ActionEvent e){
+                    if(JOptionPane.showConfirmDialog(RegisterCourseFrm.this, "Bạn có xác nhận xoá lớp này khỏi danh sách đăng kí?", "Xác nhận",JOptionPane.YES_NO_OPTION) == 0){
+                        deleteClassAtRow(row);
+                    }
+                }
+            });
+        }
+    }//GEN-LAST:event_tblCourseClassListMouseClicked
+
+    public void deleteClassAtRow(int row){
+        int index = 0;
+        RegisteredClass registeredClass = null;
+        for(RegisteredClass rs: this.registeredClasses){
+            if(row == index){
+                registeredClass = rs;
+                break;
+            }
+            ++index;
+        }
+        if(registeredClass != null){
+            this.registeredClasses.remove(registeredClass);
+        }
+        reloadRegisterTbl();
+    }
+    public void reloadRegisterTbl(){
+        DefaultTableModel defaultTableModel = (DefaultTableModel) tblCourseClassList.getModel();
+        defaultTableModel.setRowCount(0);
+        int stt = 0;
+        for (RegisteredClass rc: this.registeredClasses){
+            CourseClass cc = rc.getCourseClass();
+            Level level = cc.getLevel();
+            Program program = level.getProgram();
+            defaultTableModel.addRow(new Object[]{
+                    ++stt,
+                    cc.getClassName(),
+                    program.getProgramName(),
+                    level.getLevelName(),
+                    cc.getBranch().getBranchName(),
+                    cc.getStartDate(),
+                    cc.getDay(),
+                    cc.getShiftDay()
+            });
+            System.out.println(rc.getCourseClass().getSessions().size());
+        };
+    }
     /**
      * @param args the command line arguments
      */
@@ -284,7 +381,7 @@ public class RegisterCourseFrm extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(() -> new RegisterCourseFrm(user).setVisible(true));
+        java.awt.EventQueue.invokeLater(() -> new RegisterCourseFrm(new Registering()).setVisible(true));
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

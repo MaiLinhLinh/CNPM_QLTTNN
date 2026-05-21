@@ -4,6 +4,15 @@
  */
 package qlttnn.view;
 
+import qlttnn.dao.CourseClassDAO;
+import qlttnn.model.*;
+
+
+import javax.swing.table.DefaultTableModel;
+import java.util.ArrayList;
+
+import static javax.swing.SwingUtilities.isLeftMouseButton;
+
 /**
  *
  * @author ASUS
@@ -11,12 +20,30 @@ package qlttnn.view;
 public class SelectCourseClassFrm extends javax.swing.JFrame {
     
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(SelectCourseClassFrm.class.getName());
-
+    private Registering registering;
+    private Level level;
+    private ArrayList<CourseClass> courseClasses = new ArrayList<>();
+    private CourseClassDAO courseClassDAO = new CourseClassDAO();
+    private RegisterCourseFrm registerCourseFrm;
+    private SelectProgramLevelFrm selectProgramLevelFrm;
     /**
      * Creates new form SearchCourseClassFrm
      */
-    public SelectCourseClassFrm() {
+    public SelectCourseClassFrm(Registering registering,  Level level, RegisterCourseFrm registerCourseFrm, SelectProgramLevelFrm selectProgramLevelFrm) {
         initComponents();
+        this.registering = registering;
+        this.level = level;
+        this.registerCourseFrm = registerCourseFrm;
+        this.selectProgramLevelFrm = selectProgramLevelFrm;
+        this.lblProgramName.setText(this.level.getProgram().getProgramName());
+        this.lblLevelName.setText(this.level.getLevelName());
+        this.lblEntryLevel.setText(String.valueOf(this.level.getEntryLevel()));
+        this.lblTargetLevel.setText(String.valueOf(this.level.getTargetLevel()));
+        this.lblTotalSession.setText(String.valueOf(this.level.getTotalSessions()));
+        this.lblTuition.setText(new java.math.BigDecimal(this.level.getTuition()).toPlainString());
+
+        loadCourseClassData();
+
     }
 
     /**
@@ -46,7 +73,7 @@ public class SelectCourseClassFrm extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         tblCourseClassList = new javax.swing.JTable();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Tìm kiếm lớp học");
         setBackground(new java.awt.Color(255, 255, 255));
 
@@ -115,7 +142,7 @@ public class SelectCourseClassFrm extends javax.swing.JFrame {
         jPanel1.add(jLabel7, gridBagConstraints);
 
         lblProgramName.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        lblProgramName.setText("IELTS Foundation");
+        lblProgramName.setText("IELTS");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 4;
         gridBagConstraints.gridy = 0;
@@ -166,7 +193,7 @@ public class SelectCourseClassFrm extends javax.swing.JFrame {
 
         jScrollPane1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Danh sách lớp học đang mở", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 0, 14))); // NOI18N
 
-        tblCourseClassList.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
+        tblCourseClassList.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         tblCourseClassList.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null},
@@ -191,6 +218,11 @@ public class SelectCourseClassFrm extends javax.swing.JFrame {
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
                 return canEdit [columnIndex];
+            }
+        });
+        tblCourseClassList.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tblCourseClassListMouseClicked(evt);
             }
         });
         jScrollPane1.setViewportView(tblCourseClassList);
@@ -227,9 +259,128 @@ public class SelectCourseClassFrm extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void loadCourseClassData(){
+        courseClasses = courseClassDAO.getCourseClassList(level);
+        DefaultTableModel defaultTableModel = (DefaultTableModel) tblCourseClassList.getModel();
+        defaultTableModel.setRowCount(0);
+        int stt = 0;
+        for (CourseClass cc : courseClasses) {
+            // Lấy danh sách ngày học và ca học
+            String daysOfWeek = getDaysOfWeekFromSessions(cc);
+            String shifts = getShiftsFromSessions(cc);
+            cc.setDay(daysOfWeek);
+            cc.setShiftDay(shifts);
+            defaultTableModel.addRow(new Object[]{
+                    ++stt,
+                    cc.getClassName(),
+                    cc.getBranch().getBranchName(),
+                    cc.getStartDate(),
+                    daysOfWeek,
+                    shifts
+            });
+        }
+    }
+
+    /**
+     * Lấy 3 ngày học liên tiếp (2-4-6 hoặc 3-5-7)
+     */
+    private String getDaysOfWeekFromSessions(CourseClass courseClass) {
+        ArrayList<Integer> daysOfWeek = new ArrayList<>();
+        String[] dayNames = {"", "CN", "2", "3", "4", "5", "6", "7"};
+
+        try {
+            ArrayList<Session> sessions = courseClass.getSessions();
+            if (sessions != null && !sessions.isEmpty()) {
+                // Lấy ngày từ các buổi học
+                for (Session session : sessions) {
+                    java.time.DayOfWeek day = session.getDate().toLocalDate().getDayOfWeek();
+                    int dayValue = day.getValue(); // Monday = 1, Sunday = 7
+                    // Chuyển đổi: Monday = 2, ..., Sunday = 1
+                    int adjustedDay = dayValue == 7 ? 1 : dayValue + 1;
+                    if (!daysOfWeek.contains(adjustedDay)) {
+                        daysOfWeek.add(adjustedDay);
+                    }
+                }
+
+                if (daysOfWeek.size() >= 3) {
+                    // Sắp xếp danh sách
+                    java.util.Collections.sort(daysOfWeek);
+
+                    // Ghép 3 ngày liên tiếp
+                    StringBuilder result = new StringBuilder();
+                    for (int i = 0; i < 3; i++) {
+                        result.append(dayNames[daysOfWeek.get(i)]);
+                        if (i < 2) {
+                            result.append("-");
+                        }
+                    }
+                    return result.toString();
+                }
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return "N/A";
+    }
+
+    /**
+     * Lấy 1 ca học (Sáng, Chiều hoặc Tối)
+     * Vì 1 lớp chỉ học 1 ca thôi
+     */
+    private String getShiftsFromSessions(CourseClass courseClass) {
+
+        try {
+            ArrayList<Session> sessions = courseClass.getSessions();
+            if (sessions != null && !sessions.isEmpty()) {
+                // Lấy ca của buổi học đầu tiên (vì cả lớp chỉ học 1 ca)
+                String shiftName = sessions.get(0).getShift().getShiftName();
+                return shiftName;
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return "N/A";
+    }
     private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
         // TODO add your handling code here:
+        this.dispose();
+
     }//GEN-LAST:event_btnBackActionPerformed
+
+    private void tblCourseClassListMouseClicked(java.awt.event.MouseEvent evt) {
+        int row = tblCourseClassList.rowAtPoint(evt.getPoint());
+        if(row == -1)
+            return;
+        if(isLeftMouseButton(evt) && evt.getClickCount() == 2){
+            CourseClass courseClass = courseClasses.get(row);
+
+            // === BƯỚC 1: Kiểm tra trùng với lớp ĐANG HỌC ===
+            String conflictClassName = courseClassDAO.findConflictClass(courseClass, registering.getStudent());
+            if(conflictClassName != null){
+                javax.swing.JOptionPane.showMessageDialog(this, "Lớp bạn đang chọn đã bị trùng lịch học với lớp " + conflictClassName+ " bạn đang học tại trung tâm\nVui lòng chọn lớp khác!");
+                return;
+            }
+            // Kiem tra trung lich lop da chọn
+            for(Session session: courseClass.getSessions()) {
+                System.out.println(session);
+                for(RegisteredClass registeredClass: registering.getRegisteredClasses()) {
+                    if(registeredClass.getCourseClass().getSessions().contains(session)) {
+                        javax.swing.JOptionPane.showMessageDialog(this, "Lớp bạn đang chọn đã bị trùng lịch học với lớp " + registeredClass.getCourseClass().getClassName() +" đã chọn\nVui lòng chọn lớp khác!");
+                        return;
+                    }
+                }
+            }
+
+            // === BƯỚC 3: Không trùng với cả lớp đang học VÀ lớp đã chọn → Thêm bình thường ===
+            double sale = 10000;
+            RegisteredClass registeredClass = new RegisteredClass(courseClass, level.getTuition(), sale);
+            registering.setRegisteredClasses(registeredClass);
+            this.dispose();
+            this.selectProgramLevelFrm.dispose();
+            registerCourseFrm.reloadRegisterTbl();
+        }
+    }
+
 
     /**
      * @param args the command line arguments
@@ -253,7 +404,7 @@ public class SelectCourseClassFrm extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(() -> new SelectCourseClassFrm().setVisible(true));
+        java.awt.EventQueue.invokeLater(() -> new SelectCourseClassFrm(new Registering(), new Level(), new RegisterCourseFrm(), new SelectProgramLevelFrm()).setVisible(true));
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

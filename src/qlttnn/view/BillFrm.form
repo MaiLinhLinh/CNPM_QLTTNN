@@ -2,7 +2,7 @@
 
 <Form version="1.8" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
   <Properties>
-    <Property name="defaultCloseOperation" type="int" value="3"/>
+    <Property name="defaultCloseOperation" type="int" value="2"/>
     <Property name="title" type="java.lang.String" value="Ho&#xe1; &#x111;&#x1a1;n"/>
     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
       <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -151,7 +151,8 @@
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Segoe UI" size="14" style="0"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Ho&#xe0;ng Ho&#xe0;ng Tu&#x1ea5;n"/>
+            <Property name="text" type="java.lang.String" value="Nguy&#x1ec5;n V&#x103;n B&#xec;nh"/>
+            <Property name="name" type="java.lang.String" value="" noResource="true"/>
           </Properties>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignGridBagLayout" value="org.netbeans.modules.form.compat2.layouts.DesignGridBagLayout$GridBagConstraintsDescription">
@@ -1431,7 +1432,7 @@
     </Container>
     <Container class="javax.swing.JPanel" name="jPanel3">
       <SubComponents>
-        <Component class="javax.swing.JLabel" name="lblSale">
+        <Component class="javax.swing.JLabel" name="jlabel10">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -1447,7 +1448,7 @@
             </Constraint>
           </Constraints>
         </Component>
-        <Component class="javax.swing.JLabel" name="lblTotalTuition">
+        <Component class="javax.swing.JLabel" name="jlabel9">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -1528,7 +1529,7 @@
             </Constraint>
           </Constraints>
         </Component>
-        <Component class="javax.swing.JLabel" name="jLabel9">
+        <Component class="javax.swing.JLabel" name="lblToltalTuition">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Segoe UI" size="14" style="0"/>
@@ -1541,7 +1542,7 @@
             </Constraint>
           </Constraints>
         </Component>
-        <Component class="javax.swing.JLabel" name="jLabel10">
+        <Component class="javax.swing.JLabel" name="lblSaleOff">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Segoe UI" size="14" style="0"/>
@@ -1673,11 +1674,11 @@
             <CodeMethod name="add" class="java.awt.Container" parameterTypes="java.awt.Component, java.lang.Object"/>
           </StatementProvider>
           <Parameters>
-            <CodeExpression id="79_lblSale">
-              <CodeVariable name="lblSale" type="8194" declaredType="javax.swing.JLabel"/>
+            <CodeExpression id="79_jlabel10">
+              <CodeVariable name="jlabel10" type="8194" declaredType="javax.swing.JLabel"/>
               <ExpressionOrigin>
                 <ExpressionProvider type="ComponentRef">
-                  <ComponentRef name="lblSale"/>
+                  <ComponentRef name="jlabel10"/>
                 </ExpressionProvider>
               </ExpressionOrigin>
             </CodeExpression>
@@ -1742,11 +1743,11 @@
             <CodeMethod name="add" class="java.awt.Container" parameterTypes="java.awt.Component, java.lang.Object"/>
           </StatementProvider>
           <Parameters>
-            <CodeExpression id="84_lblTotalTuition">
-              <CodeVariable name="lblTotalTuition" type="8194" declaredType="javax.swing.JLabel"/>
+            <CodeExpression id="84_jlabel9">
+              <CodeVariable name="jlabel9" type="8194" declaredType="javax.swing.JLabel"/>
               <ExpressionOrigin>
                 <ExpressionProvider type="ComponentRef">
-                  <ComponentRef name="lblTotalTuition"/>
+                  <ComponentRef name="jlabel9"/>
                 </ExpressionProvider>
               </ExpressionOrigin>
             </CodeExpression>
@@ -2165,11 +2166,11 @@
             <CodeMethod name="add" class="java.awt.Container" parameterTypes="java.awt.Component, java.lang.Object"/>
           </StatementProvider>
           <Parameters>
-            <CodeExpression id="115_jLabel9">
-              <CodeVariable name="jLabel9" type="8194" declaredType="javax.swing.JLabel"/>
+            <CodeExpression id="115_lblToltalTuition">
+              <CodeVariable name="lblToltalTuition" type="8194" declaredType="javax.swing.JLabel"/>
               <ExpressionOrigin>
                 <ExpressionProvider type="ComponentRef">
-                  <ComponentRef name="jLabel9"/>
+                  <ComponentRef name="lblToltalTuition"/>
                 </ExpressionProvider>
               </ExpressionOrigin>
             </CodeExpression>
@@ -2260,11 +2261,11 @@
             <CodeMethod name="add" class="java.awt.Container" parameterTypes="java.awt.Component, java.lang.Object"/>
           </StatementProvider>
           <Parameters>
-            <CodeExpression id="122_jLabel10">
-              <CodeVariable name="jLabel10" type="8194" declaredType="javax.swing.JLabel"/>
+            <CodeExpression id="122_lblSaleOff">
+              <CodeVariable name="lblSaleOff" type="8194" declaredType="javax.swing.JLabel"/>
               <ExpressionOrigin>
                 <ExpressionProvider type="ComponentRef">
-                  <ComponentRef name="jLabel10"/>
+                  <ComponentRef name="lblSaleOff"/>
                 </ExpressionProvider>
               </ExpressionOrigin>
             </CodeExpression>
