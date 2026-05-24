@@ -47,7 +47,7 @@
               <EmptySpace max="-2" attributes="0"/>
               <Component id="pnlSelectProgram" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="jScrollPane2" pref="292" max="32767" attributes="0"/>
+              <Component id="jScrollPane2" pref="301" max="32767" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
               <Component id="btnBack" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
@@ -60,9 +60,7 @@
       <Properties>
         <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
           <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
-            <TitledBorder title="Ch&#x1ecd;n ch&#x1b0;&#x1a1;ng tr&#xec;nh">
-              <Font PropertyName="font" name="Segoe UI" size="14" style="0"/>
-            </TitledBorder>
+            <TitledBorder title="Ch&#x1ecd;n ch&#x1b0;&#x1a1;ng tr&#xec;nh"/>
           </Border>
         </Property>
       </Properties>
@@ -92,20 +90,12 @@
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Segoe UI" size="14" style="0"/>
             </Property>
-            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-              <StringArray count="4">
-                <StringItem index="0" value="IELTS"/>
-                <StringItem index="1" value="TOEIC LR"/>
-                <StringItem index="2" value="TOEIC RW"/>
-                <StringItem index="3" value="TOEFL"/>
-              </StringArray>
-            </Property>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cbxProgramActionPerformed"/>
           </Events>
           <AuxValues>
-            <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+            <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;Program&gt;"/>
           </AuxValues>
         </Component>
       </SubComponents>
@@ -114,9 +104,7 @@
       <Properties>
         <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
           <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
-            <TitledBorder title="Danh s&#xe1;ch m&#x1ee9;c &#x111;&#x1ed9;">
-              <Font PropertyName="font" name="Segoe UI" size="14" style="0"/>
-            </TitledBorder>
+            <TitledBorder title="Danh s&#xe1;ch m&#x1ee9;c &#x111;&#x1ed9;"/>
           </Border>
         </Property>
       </Properties>
@@ -129,13 +117,13 @@
         <Component class="javax.swing.JTable" name="tblLevelList">
           <Properties>
             <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-              <Table columnCount="6" rowCount="4">
+              <Table columnCount="6" rowCount="0">
                 <Column editable="false" title="TT" type="java.lang.Integer"/>
                 <Column editable="false" title="T&#xea;n m&#x1ee9;c &#x111;&#x1ed9;" type="java.lang.String"/>
-                <Column editable="false" title="&#x110;&#x1ea7;u v&#xe0;o" type="java.lang.Double"/>
-                <Column editable="false" title="&#x110;&#x1ea7;u ra" type="java.lang.Double"/>
-                <Column editable="false" title="Th&#x1edd;i l&#x1b0;&#x1ee3;ng" type="java.lang.Integer"/>
-                <Column editable="false" title="H&#x1ecd;c ph&#xed;" type="java.lang.Double"/>
+                <Column editable="false" title="&#x110;&#x1ea7;u v&#xe0;o" type="java.lang.String"/>
+                <Column editable="false" title="&#x110;&#x1ea7;u ra" type="java.lang.String"/>
+                <Column editable="false" title="Th&#x1edd;i l&#x1b0;&#x1ee3;ng" type="java.lang.String"/>
+                <Column editable="false" title="H&#x1ecd;c ph&#xed;" type="java.lang.String"/>
               </Table>
             </Property>
             <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
@@ -184,9 +172,6 @@
     </Container>
     <Component class="javax.swing.JButton" name="btnBack">
       <Properties>
-        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Segoe UI" size="15" style="0"/>
-        </Property>
         <Property name="text" type="java.lang.String" value="Quay l&#x1ea1;i"/>
       </Properties>
       <Events>

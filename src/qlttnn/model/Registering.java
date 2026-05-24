@@ -6,15 +6,17 @@ import java.util.ArrayList;
 
 public class Registering {
     private int id;
-    private LocalDateTime registeringDate;
+    private LocalDate registeringDate;
     private double saleOff;
     private double totalTuition;
+    private double finalTuition;
     private ArrayList<RegisteredClass> registeredClasses;
     private Student student;
     private User user;
 
     public Registering() {
         this.registeredClasses = new ArrayList<>();
+        this.totalTuition = 0;
     }
 
     public int getId() {
@@ -25,11 +27,11 @@ public class Registering {
         this.id = id;
     }
 
-    public LocalDateTime getRegisteringDate() {
+    public LocalDate getRegisteringDate() {
         return registeringDate;
     }
 
-    public void setRegisteringDate(LocalDateTime registeringDate) {
+    public void setRegisteringDate(LocalDate registeringDate) {
         this.registeringDate = registeringDate;
     }
 
@@ -69,16 +71,16 @@ public class Registering {
         }
 
         // 2. Tính tổng tiền gốc (chưa giảm)
-        double subTotal = 0;
+        totalTuition = 0;
         for (RegisteredClass rc : registeredClasses) {
-            subTotal += rc.getTuition();
+            totalTuition += rc.getTuition();
         }
 
         // Tính số tiền được giảm (saleOff)
-        this.saleOff = subTotal * discountPercent;
+        this.saleOff = totalTuition * discountPercent;
 
         // Tính tổng tiền cuối cùng sau khi giảm
-        this.totalTuition = subTotal - this.saleOff;
+        this.finalTuition = totalTuition - this.saleOff;
     }
 
     public Student getStudent() {
@@ -96,4 +98,13 @@ public class Registering {
     public void setUser(User user) {
         this.user = user;
     }
+
+    public double getFinalTuition() {
+        return finalTuition;
+    }
+
+    public void setFinalTuition(double finalTuition) {
+        this.finalTuition = finalTuition;
+    }
+
 }

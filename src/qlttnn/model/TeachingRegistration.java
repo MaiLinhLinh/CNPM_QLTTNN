@@ -18,8 +18,6 @@ public class TeachingRegistration {
         this.registeringDate = registeringDate;
     }
 
-    public TeachingRegistration() {
-    }
 
 
     public int getId() {

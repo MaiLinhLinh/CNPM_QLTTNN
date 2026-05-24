@@ -3,27 +3,14 @@ package qlttnn.model;
 public class RegisteredClass {
     private int id;
     private double tuition;
-    private double saleOff;
-    private double finalTuition;
     private CourseClass courseClass;
 
-    public RegisteredClass(int id, CourseClass courseClass, double tuition, double saleOff) {
-        this.id = id;
-        this.courseClass = courseClass;
-        this.tuition = tuition;
-        this.saleOff = saleOff;
-        this.finalTuition = this.tuition - this.saleOff;
-    }
 
-    public RegisteredClass(CourseClass courseClass, double tuition, double saleOff) {
+    public RegisteredClass(CourseClass courseClass, double tuition) {
         this.tuition = tuition;
-        this.saleOff = saleOff;
         this.courseClass = courseClass;
     }
 
-    public double getFinalTuition(){
-        return finalTuition;
-    }
 
     public int getId() {
         return id;
@@ -41,13 +28,6 @@ public class RegisteredClass {
         this.tuition = tuition;
     }
 
-    public double getSaleOff() {
-        return saleOff;
-    }
-
-    public void setSaleOff(double saleOff) {
-        this.saleOff = saleOff;
-    }
 
     public CourseClass getCourseClass() {
         return courseClass;

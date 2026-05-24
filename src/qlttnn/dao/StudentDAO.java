@@ -61,6 +61,22 @@ public class StudentDAO extends DAO {
         }
     }
 
+    // ham kiem tra cccd cua student da ton tai chua khi them student moi
+    public boolean isIdCardExisted(String idCard){
+        String sql = "select * from tblStudent where idCard = ?";
+        try{
+            PreparedStatement pstmt = con.prepareStatement(sql);
+            pstmt.setString(1, idCard);
+            ResultSet rs = pstmt.executeQuery();
+            if(rs.next()){
+                return true;
+            }
+        }catch(Exception e){
+            e.printStackTrace();
+        }
+        return false;
+    }
+
 
 }
 

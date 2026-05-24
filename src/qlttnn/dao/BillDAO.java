@@ -1,12 +1,18 @@
 package qlttnn.dao;
 
 import qlttnn.model.Bill;
+
+import java.sql.Connection;
+import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.Timestamp;
 public class BillDAO extends DAO{
 
     public BillDAO() {
         super();
+    }
+    public BillDAO(Connection con){
+        this.con = con;
     }
 
     public boolean createBill(Bill b) {
@@ -25,4 +31,6 @@ public class BillDAO extends DAO{
             return false;
         }
     }
+
+
 }

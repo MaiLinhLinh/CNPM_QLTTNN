@@ -16,8 +16,6 @@ public class Shift {
         this.endTime = endTime;
     }
 
-    public Shift() {
-    }
 
     public int getId() {
         return id;

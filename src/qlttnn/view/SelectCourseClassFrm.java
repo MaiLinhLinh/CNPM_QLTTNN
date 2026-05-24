@@ -9,8 +9,12 @@ import qlttnn.model.*;
 
 
 import javax.swing.table.DefaultTableModel;
+import java.time.DayOfWeek;
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
 
+import static javax.swing.SwingUtilities.computeUnion;
 import static javax.swing.SwingUtilities.isLeftMouseButton;
 
 /**
@@ -31,6 +35,7 @@ public class SelectCourseClassFrm extends javax.swing.JFrame {
      */
     public SelectCourseClassFrm(Registering registering,  Level level, RegisterCourseFrm registerCourseFrm, SelectProgramLevelFrm selectProgramLevelFrm) {
         initComponents();
+        setLocationRelativeTo(null);
         this.registering = registering;
         this.level = level;
         this.registerCourseFrm = registerCourseFrm;
@@ -39,8 +44,8 @@ public class SelectCourseClassFrm extends javax.swing.JFrame {
         this.lblLevelName.setText(this.level.getLevelName());
         this.lblEntryLevel.setText(String.valueOf(this.level.getEntryLevel()));
         this.lblTargetLevel.setText(String.valueOf(this.level.getTargetLevel()));
-        this.lblTotalSession.setText(String.valueOf(this.level.getTotalSessions()));
-        this.lblTuition.setText(new java.math.BigDecimal(this.level.getTuition()).toPlainString());
+        this.lblTotalSession.setText(String.format("%d buổi",this.level.getTotalSessions()));
+        this.lblTuition.setText(String.format("%,.0f VNĐ",this.level.getTuition()));
 
         loadCourseClassData();
 
@@ -77,7 +82,6 @@ public class SelectCourseClassFrm extends javax.swing.JFrame {
         setTitle("Tìm kiếm lớp học");
         setBackground(new java.awt.Color(255, 255, 255));
 
-        btnBack.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
         btnBack.setText("Quay lại");
         btnBack.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -85,13 +89,12 @@ public class SelectCourseClassFrm extends javax.swing.JFrame {
             }
         });
 
-        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Thông tin chương trình", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 0, 14))); // NOI18N
+        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder("Thông tin chương trình"));
         java.awt.GridBagLayout jPanel1Layout = new java.awt.GridBagLayout();
         jPanel1Layout.columnWidths = new int[] {0, 20, 0, 20, 0, 20, 0};
         jPanel1Layout.rowHeights = new int[] {0, 5, 0, 5, 0, 5, 0};
         jPanel1.setLayout(jPanel1Layout);
 
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel1.setText("Tên chương trình:");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
@@ -100,7 +103,6 @@ public class SelectCourseClassFrm extends javax.swing.JFrame {
         gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_START;
         jPanel1.add(jLabel1, gridBagConstraints);
 
-        jLabel3.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel3.setText("Mức độ:");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
@@ -109,7 +111,6 @@ public class SelectCourseClassFrm extends javax.swing.JFrame {
         gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_START;
         jPanel1.add(jLabel3, gridBagConstraints);
 
-        jLabel4.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel4.setText("Đầu vào:");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
@@ -117,7 +118,6 @@ public class SelectCourseClassFrm extends javax.swing.JFrame {
         gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_START;
         jPanel1.add(jLabel4, gridBagConstraints);
 
-        jLabel5.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel5.setText("Đầu ra:");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 4;
@@ -125,7 +125,6 @@ public class SelectCourseClassFrm extends javax.swing.JFrame {
         gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_START;
         jPanel1.add(jLabel5, gridBagConstraints);
 
-        jLabel6.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel6.setText("Thời lượng:");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
@@ -133,7 +132,6 @@ public class SelectCourseClassFrm extends javax.swing.JFrame {
         gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_START;
         jPanel1.add(jLabel6, gridBagConstraints);
 
-        jLabel7.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel7.setText("Học phí:");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 4;
@@ -141,7 +139,6 @@ public class SelectCourseClassFrm extends javax.swing.JFrame {
         gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_START;
         jPanel1.add(jLabel7, gridBagConstraints);
 
-        lblProgramName.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         lblProgramName.setText("IELTS");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 4;
@@ -150,7 +147,6 @@ public class SelectCourseClassFrm extends javax.swing.JFrame {
         gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_START;
         jPanel1.add(lblProgramName, gridBagConstraints);
 
-        lblLevelName.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         lblLevelName.setText("IELTS 4.5");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 4;
@@ -159,7 +155,6 @@ public class SelectCourseClassFrm extends javax.swing.JFrame {
         gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_START;
         jPanel1.add(lblLevelName, gridBagConstraints);
 
-        lblEntryLevel.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         lblEntryLevel.setText("0");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 2;
@@ -167,7 +162,6 @@ public class SelectCourseClassFrm extends javax.swing.JFrame {
         gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_START;
         jPanel1.add(lblEntryLevel, gridBagConstraints);
 
-        lblTargetLevel.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         lblTargetLevel.setText("4.5");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 6;
@@ -175,7 +169,6 @@ public class SelectCourseClassFrm extends javax.swing.JFrame {
         gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_START;
         jPanel1.add(lblTargetLevel, gridBagConstraints);
 
-        lblTotalSession.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         lblTotalSession.setText(" 30 buổi");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 2;
@@ -183,7 +176,6 @@ public class SelectCourseClassFrm extends javax.swing.JFrame {
         gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_START;
         jPanel1.add(lblTotalSession, gridBagConstraints);
 
-        lblTuition.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         lblTuition.setText("10.000.000 VNĐ");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 6;
@@ -191,15 +183,11 @@ public class SelectCourseClassFrm extends javax.swing.JFrame {
         gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_START;
         jPanel1.add(lblTuition, gridBagConstraints);
 
-        jScrollPane1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Danh sách lớp học đang mở", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 0, 14))); // NOI18N
+        jScrollPane1.setBorder(javax.swing.BorderFactory.createTitledBorder("Danh sách lớp học đang mở"));
 
-        tblCourseClassList.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         tblCourseClassList.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null}
+
             },
             new String [] {
                 "TT", "Tên lớp", "Cơ sở", "Ngày khai giảng", "Ngày học", "Ca học"
@@ -250,7 +238,7 @@ public class SelectCourseClassFrm extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 326, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 351, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnBack)
                 .addContainerGap())
@@ -265,82 +253,17 @@ public class SelectCourseClassFrm extends javax.swing.JFrame {
         defaultTableModel.setRowCount(0);
         int stt = 0;
         for (CourseClass cc : courseClasses) {
-            // Lấy danh sách ngày học và ca học
-            String daysOfWeek = getDaysOfWeekFromSessions(cc);
-            String shifts = getShiftsFromSessions(cc);
-            cc.setDay(daysOfWeek);
-            cc.setShiftDay(shifts);
             defaultTableModel.addRow(new Object[]{
                     ++stt,
                     cc.getClassName(),
                     cc.getBranch().getBranchName(),
                     cc.getStartDate(),
-                    daysOfWeek,
-                    shifts
+                    cc.getDay(),
+                    cc.getShiftDay()
             });
         }
     }
 
-    /**
-     * Lấy 3 ngày học liên tiếp (2-4-6 hoặc 3-5-7)
-     */
-    private String getDaysOfWeekFromSessions(CourseClass courseClass) {
-        ArrayList<Integer> daysOfWeek = new ArrayList<>();
-        String[] dayNames = {"", "CN", "2", "3", "4", "5", "6", "7"};
-
-        try {
-            ArrayList<Session> sessions = courseClass.getSessions();
-            if (sessions != null && !sessions.isEmpty()) {
-                // Lấy ngày từ các buổi học
-                for (Session session : sessions) {
-                    java.time.DayOfWeek day = session.getDate().toLocalDate().getDayOfWeek();
-                    int dayValue = day.getValue(); // Monday = 1, Sunday = 7
-                    // Chuyển đổi: Monday = 2, ..., Sunday = 1
-                    int adjustedDay = dayValue == 7 ? 1 : dayValue + 1;
-                    if (!daysOfWeek.contains(adjustedDay)) {
-                        daysOfWeek.add(adjustedDay);
-                    }
-                }
-
-                if (daysOfWeek.size() >= 3) {
-                    // Sắp xếp danh sách
-                    java.util.Collections.sort(daysOfWeek);
-
-                    // Ghép 3 ngày liên tiếp
-                    StringBuilder result = new StringBuilder();
-                    for (int i = 0; i < 3; i++) {
-                        result.append(dayNames[daysOfWeek.get(i)]);
-                        if (i < 2) {
-                            result.append("-");
-                        }
-                    }
-                    return result.toString();
-                }
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        return "N/A";
-    }
-
-    /**
-     * Lấy 1 ca học (Sáng, Chiều hoặc Tối)
-     * Vì 1 lớp chỉ học 1 ca thôi
-     */
-    private String getShiftsFromSessions(CourseClass courseClass) {
-
-        try {
-            ArrayList<Session> sessions = courseClass.getSessions();
-            if (sessions != null && !sessions.isEmpty()) {
-                // Lấy ca của buổi học đầu tiên (vì cả lớp chỉ học 1 ca)
-                String shiftName = sessions.get(0).getShift().getShiftName();
-                return shiftName;
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        return "N/A";
-    }
     private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
         // TODO add your handling code here:
         this.dispose();
@@ -354,7 +277,7 @@ public class SelectCourseClassFrm extends javax.swing.JFrame {
         if(isLeftMouseButton(evt) && evt.getClickCount() == 2){
             CourseClass courseClass = courseClasses.get(row);
 
-            // === BƯỚC 1: Kiểm tra trùng với lớp ĐANG HỌC ===
+            // Kiểm tra trùng với lớp ĐANG HỌC
             String conflictClassName = courseClassDAO.findConflictClass(courseClass, registering.getStudent());
             if(conflictClassName != null){
                 javax.swing.JOptionPane.showMessageDialog(this, "Lớp bạn đang chọn đã bị trùng lịch học với lớp " + conflictClassName+ " bạn đang học tại trung tâm\nVui lòng chọn lớp khác!");
@@ -371,9 +294,9 @@ public class SelectCourseClassFrm extends javax.swing.JFrame {
                 }
             }
 
-            // === BƯỚC 3: Không trùng với cả lớp đang học VÀ lớp đã chọn → Thêm bình thường ===
-            double sale = 10000;
-            RegisteredClass registeredClass = new RegisteredClass(courseClass, level.getTuition(), sale);
+            // Không trùng với cả lớp đang học VÀ lớp đã chọn
+
+            RegisteredClass registeredClass = new RegisteredClass(courseClass, level.getTuition());
             registering.setRegisteredClasses(registeredClass);
             this.dispose();
             this.selectProgramLevelFrm.dispose();

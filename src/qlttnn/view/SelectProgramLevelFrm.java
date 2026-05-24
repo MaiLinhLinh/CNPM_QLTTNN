@@ -33,9 +33,11 @@ public class SelectProgramLevelFrm extends javax.swing.JFrame {
      */
     public SelectProgramLevelFrm(Registering registering, RegisterCourseFrm registerCourseFrm) {
         initComponents();
+        setLocationRelativeTo(null);
         this.registering = registering;
         this.registerCourseFrm = registerCourseFrm;
         loadProgramData();
+
 
     }
     public SelectProgramLevelFrm(){
@@ -61,11 +63,9 @@ public class SelectProgramLevelFrm extends javax.swing.JFrame {
         setTitle("Chọn chương trình và mức độ");
         setBackground(new java.awt.Color(255, 255, 255));
 
-        pnlSelectProgram.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Chọn chương trình", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 0, 14))); // NOI18N
+        pnlSelectProgram.setBorder(javax.swing.BorderFactory.createTitledBorder("Chọn chương trình"));
 
-        cbxProgram.setEditable(true);
         cbxProgram.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        //cbxProgram.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "IELTS", "TOEIC LR", "TOEIC RW", "TOEFL" }));
         cbxProgram.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cbxProgramActionPerformed(evt);
@@ -88,21 +88,18 @@ public class SelectProgramLevelFrm extends javax.swing.JFrame {
                 .addGap(0, 3, Short.MAX_VALUE))
         );
 
-        jScrollPane2.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Danh sách mức độ", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 0, 14))); // NOI18N
+        jScrollPane2.setBorder(javax.swing.BorderFactory.createTitledBorder("Danh sách mức độ"));
 
         tblLevelList.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null}
+
             },
             new String [] {
                 "TT", "Tên mức độ", "Đầu vào", "Đầu ra", "Thời lượng", "Học phí"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.Integer.class, java.lang.String.class, java.lang.Double.class, java.lang.Double.class, java.lang.Integer.class, java.lang.Double.class
+                java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
             };
             boolean[] canEdit = new boolean [] {
                 false, false, false, false, false, false
@@ -128,7 +125,6 @@ public class SelectProgramLevelFrm extends javax.swing.JFrame {
             tblLevelList.getColumnModel().getColumn(0).setMaxWidth(50);
         }
 
-        btnBack.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
         btnBack.setText("Quay lại");
         btnBack.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -156,7 +152,7 @@ public class SelectProgramLevelFrm extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(pnlSelectProgram, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 292, Short.MAX_VALUE)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 301, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnBack)
                 .addContainerGap())
@@ -197,7 +193,7 @@ public class SelectProgramLevelFrm extends javax.swing.JFrame {
                             level.getEntryLevel(),
                             level.getTargetLevel(),
                             level.getTotalSessions(),
-                            level.getTuition()
+                            String.format("%,.0f VNĐ",level.getTuition())
                     });
                 }
 

@@ -6,10 +6,6 @@ public class ClassRoom {
     private String roomName;
     private Branch branch;
 
-    public ClassRoom(int capacity, String roomName) {
-        this.capacity = capacity;
-        this.roomName = roomName;
-    }
 
     public ClassRoom(int id, int capacity, String roomName, Branch branch) {
         this.id = id;
@@ -18,8 +14,7 @@ public class ClassRoom {
         this.branch = branch;
     }
 
-    public ClassRoom() {
-    }
+
 
     public Branch getBranch() {
         return branch;

@@ -29,6 +29,7 @@ public class SearchStudentFrm extends javax.swing.JFrame {
      */
     public SearchStudentFrm(User user) {
         initComponents();
+        setLocationRelativeTo(null);
         this.user = user;
     }
 
@@ -52,17 +53,15 @@ public class SearchStudentFrm extends javax.swing.JFrame {
         setTitle("Tìm học viên");
         setBackground(new java.awt.Color(255, 255, 255));
 
-        pnlSearchStudent.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Tìm kiếm", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 0, 14))); // NOI18N
+        pnlSearchStudent.setBorder(javax.swing.BorderFactory.createTitledBorder("Tìm kiếm"));
         pnlSearchStudent.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
 
-        txtSearchKey.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         txtSearchKey.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
                 txtSearchKeyKeyPressed(evt);
             }
         });
 
-        btnSearch.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         btnSearch.setText("Tìm kiếm");
         btnSearch.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -90,7 +89,6 @@ public class SearchStudentFrm extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        btnAddStudent.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
         btnAddStudent.setText("Thêm mới");
         btnAddStudent.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -100,8 +98,7 @@ public class SearchStudentFrm extends javax.swing.JFrame {
 
         tblStudentList.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null}
+
             },
             new String [] {
                 "TT", "Họ tên", "Ngày sinh", "SĐT", "Email", "CCCD", "Địa chỉ"
@@ -153,7 +150,7 @@ public class SearchStudentFrm extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(pnlSearchStudent, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 288, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 301, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnAddStudent)
                 .addContainerGap())

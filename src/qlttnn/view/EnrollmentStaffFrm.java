@@ -19,6 +19,7 @@ public class EnrollmentStaffFrm extends javax.swing.JFrame {
      */
     public EnrollmentStaffFrm(User user) {
         initComponents();
+        setLocationRelativeTo(null);
         this.user = user;
         this.lblEnrollmentStaffName.setText( user.getFullName());
     }
@@ -44,7 +45,6 @@ public class EnrollmentStaffFrm extends javax.swing.JFrame {
         lblHomePage.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblHomePage.setText("XIN CHÀO");
 
-        btnRegisterCourse.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
         btnRegisterCourse.setText("Đăng kí khoá học");
         btnRegisterCourse.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -60,17 +60,15 @@ public class EnrollmentStaffFrm extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(lblHomePage, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(132, 132, 132))
-            .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(lblEnrollmentStaffName, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(lblHomePage, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(lblEnrollmentStaffName, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(124, Short.MAX_VALUE)
+                .addContainerGap(138, Short.MAX_VALUE)
                 .addComponent(btnRegisterCourse)
-                .addGap(124, 124, 124))
+                .addGap(135, 135, 135))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -81,7 +79,7 @@ public class EnrollmentStaffFrm extends javax.swing.JFrame {
                 .addComponent(lblEnrollmentStaffName)
                 .addGap(18, 18, 18)
                 .addComponent(btnRegisterCourse)
-                .addContainerGap(33, Short.MAX_VALUE))
+                .addContainerGap(38, Short.MAX_VALUE))
         );
 
         pack();

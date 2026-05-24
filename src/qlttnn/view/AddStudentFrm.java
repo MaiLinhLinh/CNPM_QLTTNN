@@ -21,19 +21,14 @@ public class AddStudentFrm extends javax.swing.JFrame {
     private User user;
     DateTimeFormatter fmt = DateTimeFormatter.ofPattern("dd/MM/yyyy");
 
+
     /**
      * Creates new form AddStudentFrm
      */
     public AddStudentFrm(User user) {
         initComponents();
+        setLocationRelativeTo(null);
         this.user = user;
-        errFullName.setText(" ");
-        errPhone.setText(" ");
-        errIDCard.setText(" ");
-        errDateOfBirth.setText(" ");
-        errEmail.setText(" ");
-        errAddress.setText(" ");
-
     }
 
     /**
@@ -70,39 +65,21 @@ public class AddStudentFrm extends javax.swing.JFrame {
         setTitle("Thêm học viên mới");
         setBackground(new java.awt.Color(255, 255, 255));
 
-        pnlStudentInfo.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Nhập thông tin học viên", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 0, 14))); // NOI18N
+        pnlStudentInfo.setBorder(javax.swing.BorderFactory.createTitledBorder("Nhập thông tin học viên"));
         pnlStudentInfo.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
 
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel1.setText("Họ tên:");
 
-        jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel2.setText("Ngày sinh:");
 
-        jLabel3.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel3.setText("SĐT:");
 
-        jLabel4.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel4.setText("CCCD:");
 
         jLabel5.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel5.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel5.setText("Email");
 
-        jLabel6.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel6.setText("Địa chỉ");
-
-        txtFullName.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-
-        txtDateOfBirth.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-
-        txtPhone.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-
-        txtIDCard.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-
-        txtAddress.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-
-        txtEmail.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
 
         errFullName.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
         errFullName.setForeground(new java.awt.Color(255, 0, 0));
@@ -131,80 +108,80 @@ public class AddStudentFrm extends javax.swing.JFrame {
         javax.swing.GroupLayout pnlStudentInfoLayout = new javax.swing.GroupLayout(pnlStudentInfo);
         pnlStudentInfo.setLayout(pnlStudentInfoLayout);
         pnlStudentInfoLayout.setHorizontalGroup(
-                pnlStudentInfoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(pnlStudentInfoLayout.createSequentialGroup()
-                                .addContainerGap()
-                                .addGroup(pnlStudentInfoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addGroup(pnlStudentInfoLayout.createSequentialGroup()
-                                                .addGroup(pnlStudentInfoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                        .addComponent(jLabel2)
-                                                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addGroup(pnlStudentInfoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                        .addComponent(txtDateOfBirth, javax.swing.GroupLayout.DEFAULT_SIZE, 274, Short.MAX_VALUE)
-                                                        .addComponent(txtPhone)
-                                                        .addComponent(txtIDCard)
-                                                        .addComponent(errFullName, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                                        .addComponent(errIDCard, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                                        .addComponent(errDateOfBirth, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                                        .addComponent(errPhone, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                                        .addGroup(pnlStudentInfoLayout.createSequentialGroup()
-                                                .addGroup(pnlStudentInfoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                        .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                        .addComponent(jLabel6))
-                                                .addGap(30, 30, 30)
-                                                .addGroup(pnlStudentInfoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                        .addComponent(txtAddress, javax.swing.GroupLayout.Alignment.TRAILING)
-                                                        .addComponent(txtEmail)
-                                                        .addComponent(errEmail, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                                        .addComponent(errAddress, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                                        .addGroup(pnlStudentInfoLayout.createSequentialGroup()
-                                                .addComponent(jLabel4)
-                                                .addGap(0, 0, Short.MAX_VALUE))
-                                        .addGroup(pnlStudentInfoLayout.createSequentialGroup()
-                                                .addComponent(jLabel1)
-                                                .addGap(26, 26, 26)
-                                                .addComponent(txtFullName)))
-                                .addContainerGap())
+            pnlStudentInfoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlStudentInfoLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(pnlStudentInfoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(pnlStudentInfoLayout.createSequentialGroup()
+                        .addGroup(pnlStudentInfoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel2)
+                            .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(pnlStudentInfoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(txtPhone, javax.swing.GroupLayout.DEFAULT_SIZE, 286, Short.MAX_VALUE)
+                            .addComponent(txtIDCard)
+                            .addComponent(errFullName, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(errIDCard, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(errDateOfBirth, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(errPhone, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(txtDateOfBirth, javax.swing.GroupLayout.Alignment.TRAILING)))
+                    .addGroup(pnlStudentInfoLayout.createSequentialGroup()
+                        .addGroup(pnlStudentInfoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel6))
+                        .addGap(23, 23, 23)
+                        .addGroup(pnlStudentInfoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(errEmail, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(txtAddress, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(txtEmail)
+                            .addComponent(errAddress, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addGroup(pnlStudentInfoLayout.createSequentialGroup()
+                        .addComponent(jLabel4)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(pnlStudentInfoLayout.createSequentialGroup()
+                        .addComponent(jLabel1)
+                        .addGap(22, 22, 22)
+                        .addComponent(txtFullName)))
+                .addContainerGap())
         );
         pnlStudentInfoLayout.setVerticalGroup(
-                pnlStudentInfoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(pnlStudentInfoLayout.createSequentialGroup()
-                                .addGroup(pnlStudentInfoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                        .addComponent(jLabel1)
-                                        .addComponent(txtFullName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(errFullName)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(pnlStudentInfoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                        .addComponent(jLabel2)
-                                        .addComponent(txtDateOfBirth, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(errDateOfBirth)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(pnlStudentInfoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                        .addComponent(jLabel3)
-                                        .addComponent(txtPhone, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(errPhone)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(pnlStudentInfoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                        .addComponent(jLabel4)
-                                        .addComponent(txtIDCard, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(errIDCard)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(pnlStudentInfoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                        .addComponent(jLabel5)
-                                        .addComponent(txtEmail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(errEmail)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(pnlStudentInfoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                        .addComponent(jLabel6)
-                                        .addComponent(txtAddress, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(errAddress))
+            pnlStudentInfoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlStudentInfoLayout.createSequentialGroup()
+                .addGroup(pnlStudentInfoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel1)
+                    .addComponent(txtFullName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(errFullName)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(pnlStudentInfoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel2)
+                    .addComponent(txtDateOfBirth, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(errDateOfBirth)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(pnlStudentInfoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel3)
+                    .addComponent(txtPhone, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(errPhone)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(pnlStudentInfoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel4)
+                    .addComponent(txtIDCard, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(errIDCard)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(pnlStudentInfoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel5)
+                    .addComponent(txtEmail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(errEmail)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(pnlStudentInfoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel6)
+                    .addComponent(txtAddress, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(errAddress))
         );
 
         btnSave.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
@@ -218,24 +195,24 @@ public class AddStudentFrm extends javax.swing.JFrame {
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
-                layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(layout.createSequentialGroup()
-                                .addContainerGap()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(pnlStudentInfo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                                .addGap(0, 0, Short.MAX_VALUE)
-                                                .addComponent(btnSave)))
-                                .addContainerGap())
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(pnlStudentInfo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(btnSave)))
+                .addContainerGap())
         );
         layout.setVerticalGroup(
-                layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(layout.createSequentialGroup()
-                                .addContainerGap()
-                                .addComponent(pnlStudentInfo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(btnSave)
-                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(pnlStudentInfo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnSave)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
@@ -251,55 +228,50 @@ public class AddStudentFrm extends javax.swing.JFrame {
         String email = txtEmail.getText();
         String address = txtAddress.getText();
 
+        errFullName.setText(" ");
+        errPhone.setText(" ");
+        errIDCard.setText(" ");
+        errDateOfBirth.setText(" ");
+        errEmail.setText(" ");
+        errAddress.setText(" ");
+
         boolean isValid = true;
         if (fullName.isEmpty()) {
             isValid = false;
             errFullName.setText("Vui lòng nhập đầy đủ họ tên");
-        } else {
-            errFullName.setText("");
         }
-        // Kiểm tra Ngày sinh
+
         if (dateOfBirth.isEmpty()) {
             errDateOfBirth.setText("Vui lòng nhập ngày sinh");
             isValid = false;
-        } else {
-            errDateOfBirth.setText("");
         }
 
-        // Kiểm tra SĐT
         if (phone.isEmpty()) {
             errPhone.setText("Vui lòng nhập SĐT");
             isValid = false;
         } else if (!phone.matches("\\d{10}")) {
             errPhone.setText("SĐT phải có 10 chữ số");
             isValid = false;
-        } else {
-            errPhone.setText("");
         }
-        // Kiểm tra CCCD
         if (idCard.isEmpty()) {
             errIDCard.setText("Vui lòng nhập CCCD");
             isValid = false;
         } else if (!idCard.matches("\\d{12}")) {
             errIDCard.setText("CCCD phải có 12 chữ số");
             isValid = false;
-        } else {
-            errIDCard.setText("");
+        }else if(studentDAO.isIdCardExisted(idCard)){
+            errIDCard.setText("CCCD đã tồn tại");
+            isValid = false;
         }
 
-        // Kiểm tra Email
         if (email.isEmpty()) {
             errEmail.setText("Vui lòng nhập email");
             isValid = false;
-        } else {
-            errEmail.setText("");
         }
-        // Kiểm tra Địa chỉ
+
         if (address.isEmpty()) {
             errAddress.setText("Vui lòng nhập địa chỉ");
             isValid = false;
-        } else {
-            errAddress.setText("");
         }
         if (isValid) {
             Student student = new Student(fullName, idCard, phone, LocalDate.parse(dateOfBirth, fmt), email, address);

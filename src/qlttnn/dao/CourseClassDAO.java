@@ -1,10 +1,13 @@
 package qlttnn.dao;
 
+import java.awt.image.ImageProducer;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
+import java.util.Date;
 
+import com.sun.source.tree.TryTree;
 import qlttnn.model.*;
 
 public class CourseClassDAO extends DAO {
@@ -22,11 +25,18 @@ public class CourseClassDAO extends DAO {
                 "sh.id AS shId, sh.shiftName, sh.startTime, sh.endTime, " +
                 "cr.id AS crId, cr.capacity, cr.roomName " +
                 "FROM tblCourseClass cc " +
+                "LEFT JOIN tblRegisteredClass rc on rc.courseClassId = cc.id "+
                 "JOIN tblBranch b ON cc.branchId = b.id " +
-                "LEFT JOIN tblSession s ON cc.id = s.courseClassId " +
-                "LEFT JOIN tblShift sh ON s.shiftId = sh.id " +
-                "LEFT JOIN tblClassRoom cr ON s.classRoomId = cr.id " +
-                "WHERE cc.levelId = ? " +
+                "JOIN tblSession s ON cc.id = s.courseClassId " +
+                "JOIN tblShift sh ON s.shiftId = sh.id " +
+                "JOIN tblClassRoom cr ON s.classRoomId = cr.id " +
+                "WHERE cc.levelId = ? and cc.startDate >= CAST(GETDATE() AS date) " +
+                "GROUP BY cc.id, cc.className, cc.maxStudents, cc.startDate, " +
+                "b.id, b.branchName, b.address, " +
+                "s.id, s.skill, s.date, " +
+                "sh.id, sh.shiftName, sh.startTime, sh.endTime, " +
+                "cr.id, cr.capacity, cr.roomName " +
+                "HAVING COUNT(DISTINCT rc.id) < cc.maxStudents " +
                 "ORDER BY cc.startDate DESC, s.date, sh.startTime";
 
         try {
@@ -35,7 +45,6 @@ public class CourseClassDAO extends DAO {
             ResultSet resultSet = pstm.executeQuery();
 
             CourseClass currentClass = null;
-            Session currentSession = null;
 
             while (resultSet.next()) {
                 int classId = resultSet.getInt("ccId");
@@ -54,51 +63,58 @@ public class CourseClassDAO extends DAO {
                             resultSet.getInt("maxStudents"),
                             resultSet.getDate("startDate").toLocalDate(),
                             l,
-                            branch
+                            branch,
+                            new ArrayList<>()
                     );
-                    currentClass.setSessions(new ArrayList<>());
                     list.add(currentClass);
-                    currentSession = null; // Reset session
                 }
 
                 // Tạo session mới nếu có
                 int sessionId = resultSet.getInt("sId");
                 if (!resultSet.wasNull()) {
-                    if (currentSession == null || currentSession.getId() != sessionId) {
-                        Branch branch = currentClass.getBranch();
+                    Branch branch = currentClass.getBranch();
 
-                        ClassRoom classRoom = new ClassRoom(
-                                resultSet.getInt("crId"),
-                                resultSet.getInt("capacity"),
-                                resultSet.getString("roomName"),
-                                branch
-                        );
+                    ClassRoom classRoom = new ClassRoom(
+                            resultSet.getInt("crId"),
+                            resultSet.getInt("capacity"),
+                            resultSet.getString("roomName"),
+                            branch
+                    );
 
-                        Shift shift = new Shift(
-                                resultSet.getInt("shId"),
-                                resultSet.getString("shiftName"),
-                                resultSet.getTime("startTime").toLocalTime(),
-                                resultSet.getTime("endTime").toLocalTime()
-                        );
+                    Shift shift = new Shift(
+                            resultSet.getInt("shId"),
+                            resultSet.getString("shiftName"),
+                            resultSet.getTime("startTime").toLocalTime(),
+                            resultSet.getTime("endTime").toLocalTime()
+                    );
 
-                        currentSession = new Session(
-                                sessionId,
-                                resultSet.getString("skill"),
-                                resultSet.getTimestamp("date").toLocalDateTime(),
-                                shift,
-                                classRoom
-                        );
+                    Session currentSession = new Session(
+                            sessionId,
+                            resultSet.getString("skill"),
+                            resultSet.getDate("date").toLocalDate(),
+                            shift,
+                            classRoom
+                    );
 
-                        currentClass.getSessions().add(currentSession);
-                    }
+                    currentClass.getSessions().add(currentSession);
+
                 }
             }
+            pstm.close();
+            resultSet.close();
 
         } catch (Exception e) {
             e.printStackTrace();
         }
+        for (CourseClass courseClass : list) {
+            courseClass.updateScheduleInfo();
+        }
         return list;
     }
+
+
+
+
 
     public String findConflictClass(CourseClass currentCourseClass, Student student) {
         String sql =
@@ -147,7 +163,6 @@ public class CourseClassDAO extends DAO {
 
         return null;
     }
-
 
 
 

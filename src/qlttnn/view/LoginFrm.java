@@ -21,6 +21,7 @@ public class LoginFrm extends javax.swing.JFrame {
      */
     public LoginFrm() {
         initComponents();
+        setLocationRelativeTo(null);
     }
 
     /**
@@ -55,10 +56,8 @@ public class LoginFrm extends javax.swing.JFrame {
         lblPassword.setText("Mật khẩu:");
 
         txtUsername.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        txtUsername.setText("a");
 
         pwdPassword.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        pwdPassword.setText("a@123");
 
         btnLogin.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         btnLogin.setText("Đăng nhập");

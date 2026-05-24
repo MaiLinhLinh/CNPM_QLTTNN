@@ -29,6 +29,7 @@ public class RegisterCourseFrm extends javax.swing.JFrame {
     private DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
     public RegisterCourseFrm(Registering registering) {
         initComponents();
+        setLocationRelativeTo(null);
         this.registering = registering;
         this.registeredClasses = this.registering.getRegisteredClasses();
         Student student = registering.getStudent();
@@ -75,7 +76,6 @@ public class RegisterCourseFrm extends javax.swing.JFrame {
         setTitle("Đăng kí học");
         setBackground(new java.awt.Color(255, 255, 255));
 
-        btnAddCourseClass.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         btnAddCourseClass.setText("Thêm lớp học");
         btnAddCourseClass.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -83,7 +83,6 @@ public class RegisterCourseFrm extends javax.swing.JFrame {
             }
         });
 
-        btnRegister.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         btnRegister.setText("Đăng kí");
         btnRegister.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -91,13 +90,12 @@ public class RegisterCourseFrm extends javax.swing.JFrame {
             }
         });
 
-        pnlStudentInfo.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Thông tin học viên", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 0, 14))); // NOI18N
+        pnlStudentInfo.setBorder(javax.swing.BorderFactory.createTitledBorder("Thông tin học viên"));
         java.awt.GridBagLayout pnlStudentInfoLayout = new java.awt.GridBagLayout();
         pnlStudentInfoLayout.columnWidths = new int[] {0, 20, 0};
         pnlStudentInfoLayout.rowHeights = new int[] {0, 5, 0, 5, 0, 5, 0, 5, 0, 5, 0};
         pnlStudentInfo.setLayout(pnlStudentInfoLayout);
 
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel1.setText("Họ và tên:");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
@@ -105,7 +103,6 @@ public class RegisterCourseFrm extends javax.swing.JFrame {
         gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_START;
         pnlStudentInfo.add(jLabel1, gridBagConstraints);
 
-        jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel2.setText("Ngày sinh:");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
@@ -113,7 +110,6 @@ public class RegisterCourseFrm extends javax.swing.JFrame {
         gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_START;
         pnlStudentInfo.add(jLabel2, gridBagConstraints);
 
-        jLabel3.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel3.setText("CCCD:");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
@@ -121,7 +117,6 @@ public class RegisterCourseFrm extends javax.swing.JFrame {
         gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_START;
         pnlStudentInfo.add(jLabel3, gridBagConstraints);
 
-        jLabel4.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel4.setText("SĐT:");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
@@ -129,7 +124,6 @@ public class RegisterCourseFrm extends javax.swing.JFrame {
         gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_START;
         pnlStudentInfo.add(jLabel4, gridBagConstraints);
 
-        jLabel5.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel5.setText("Email:");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
@@ -137,7 +131,6 @@ public class RegisterCourseFrm extends javax.swing.JFrame {
         gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_START;
         pnlStudentInfo.add(jLabel5, gridBagConstraints);
 
-        jLabel6.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel6.setText("Địa chỉ:");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
@@ -145,7 +138,6 @@ public class RegisterCourseFrm extends javax.swing.JFrame {
         gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_START;
         pnlStudentInfo.add(jLabel6, gridBagConstraints);
 
-        lblFullName.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         lblFullName.setText("Nguyễn Văn Bình");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 2;
@@ -153,7 +145,6 @@ public class RegisterCourseFrm extends javax.swing.JFrame {
         gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_START;
         pnlStudentInfo.add(lblFullName, gridBagConstraints);
 
-        lblDateOfBirth.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         lblDateOfBirth.setText("19/01/2005");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 2;
@@ -161,7 +152,6 @@ public class RegisterCourseFrm extends javax.swing.JFrame {
         gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_START;
         pnlStudentInfo.add(lblDateOfBirth, gridBagConstraints);
 
-        lblIDCard.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         lblIDCard.setText("000123456789");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 2;
@@ -169,7 +159,6 @@ public class RegisterCourseFrm extends javax.swing.JFrame {
         gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_START;
         pnlStudentInfo.add(lblIDCard, gridBagConstraints);
 
-        lblPhone.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         lblPhone.setText("0123456789");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 2;
@@ -177,7 +166,6 @@ public class RegisterCourseFrm extends javax.swing.JFrame {
         gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_START;
         pnlStudentInfo.add(lblPhone, gridBagConstraints);
 
-        lblEmail.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         lblEmail.setText("hhtuann@gmail.com");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 2;
@@ -185,7 +173,6 @@ public class RegisterCourseFrm extends javax.swing.JFrame {
         gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_START;
         pnlStudentInfo.add(lblEmail, gridBagConstraints);
 
-        lblAddress.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         lblAddress.setText("Hoằng Hoá - Thanh Hoá");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 2;
@@ -193,15 +180,11 @@ public class RegisterCourseFrm extends javax.swing.JFrame {
         gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_START;
         pnlStudentInfo.add(lblAddress, gridBagConstraints);
 
-        jScrollPane1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Danh sách lớp đăng ký nguyện vọng", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 0, 14))); // NOI18N
+        jScrollPane1.setBorder(javax.swing.BorderFactory.createTitledBorder("Danh sách lớp đăng ký nguyện vọng"));
 
         tblCourseClassList.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null}
+
             },
             new String [] {
                 "TT", "Tên lớp", "Chương trình", "Mức độ", "Cơ sở", "Ngày khai giảng", "Ngày học", "Ca học"
@@ -269,7 +252,7 @@ public class RegisterCourseFrm extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(pnlStudentInfo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 277, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 309, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(btnAddCourseClass)
@@ -286,19 +269,24 @@ public class RegisterCourseFrm extends javax.swing.JFrame {
         selectProgramLevelFrm.setVisible(true);
     }//GEN-LAST:event_btnAddCourseClassActionPerformed
 
-    private void btnRegisterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegisterActionPerformed
-        // TODO add your handling code here:
-        RegisteringDAO registeringDAO = new RegisteringDAO();
-        this.registering.setRegisteringDate(java.time.LocalDateTime.now());
-        if(registeringDAO.addRegistering(this.registering)){
-            javax.swing.JOptionPane.showMessageDialog(this, "Đăng kí học thành công!");
-            BillFrm billFrm = new BillFrm(this.registering, this);
+//    private void btnRegisterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegisterActionPerformed
+//        // TODO add your handling code here:
+//        RegisteringDAO registeringDAO = new RegisteringDAO();
+//        this.registering.setRegisteringDate(java.time.LocalDate.now());
+//        if(registeringDAO.addRegistering(this.registering)){
+//            javax.swing.JOptionPane.showMessageDialog(this, "Đăng kí học thành công!");
+//            BillFrm billFrm = new BillFrm(this.registering, this);
+//            billFrm.setVisible(true);
+//        }else{
+//            javax.swing.JOptionPane.showMessageDialog(this, "Tạo phiếu đăng kí thất bại!");
+//        }
+//
+//    }//GEN-LAST:event_btnRegisterActionPerformed
+    private void btnRegisterActionPerformed(java.awt.event.ActionEvent evt){
+        this.registering.setRegisteringDate(java.time.LocalDate.now());
+        BillFrm billFrm = new BillFrm(this.registering, this);
             billFrm.setVisible(true);
-        }else{
-            javax.swing.JOptionPane.showMessageDialog(this, "Tạo phiếu đăng kí thất bại!");
-        }
-
-    }//GEN-LAST:event_btnRegisterActionPerformed
+    }
 
     private void tblCourseClassListMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblCourseClassListMouseClicked
         // TODO add your handling code here:

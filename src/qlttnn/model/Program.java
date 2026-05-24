@@ -14,13 +14,6 @@ public class Program {
         this.description = description;
     }
 
-    public Program(String programName, String description) {
-        this.programName = programName;
-        this.description = description;
-    }
-
-    public Program() {
-    }
 
     @Override
     public String toString() {

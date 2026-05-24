@@ -2,8 +2,10 @@ package qlttnn.model;
 
 import qlttnn.dao.CourseClassDAO;
 
+import java.time.DayOfWeek;
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class CourseClass {
     private int id;
@@ -16,14 +18,6 @@ public class CourseClass {
     private String day;
     private String shiftDay;
 
-    public CourseClass(int id, String className, int maxStudents, LocalDate startDate, Level level, Branch branch) {
-        this.id = id;
-        this.className = className;
-        this.maxStudents = maxStudents;
-        this.startDate = startDate;
-        this.level = level;
-        this.branch = branch;
-    }
 
     public CourseClass(int id, String className, int maxStudents, LocalDate startDate, Level level, Branch branch, ArrayList<Session> sessions) {
         this.id = id;
@@ -63,6 +57,11 @@ public class CourseClass {
 
     public String getClassName() {
         return className;
+    }
+
+    public void updateScheduleInfo() {
+        this.day = getDaysOfWeekFromSessions();
+        this.shiftDay = getShiftsFromSessions();
     }
 
     public void setClassName(String className) {
@@ -108,5 +107,57 @@ public class CourseClass {
 
     public void setBranch(Branch branch) {
         this.branch = branch;
+    }
+
+    /**
+     * Lấy 3 ngày học liên tiếp (2-4-6 hoặc 3-5-7)
+     */
+    private String getDaysOfWeekFromSessions(){
+        ArrayList<Integer> dayOfWeeks = new ArrayList<>();
+        String [] daysName = {"", "CN", "2", "3", "4", "5", "6", "7"};
+        try{
+            ArrayList<Session> sessions = this.getSessions();
+            if(sessions != null && !sessions.isEmpty()){
+                for(Session session: sessions){
+                    DayOfWeek day = session.getDate().getDayOfWeek();
+                    int date = day.getValue() + 1;
+                    if(date >= 2 && date <= 7){
+                        if(!dayOfWeeks.contains(date)){
+                            dayOfWeeks.add(date);
+                        }
+                    }
+                    if(dayOfWeeks.size() >= 3){
+                        Collections.sort(dayOfWeeks);
+                        StringBuilder result = new StringBuilder();
+                        for(int i = 0; i < 3; i++){
+                            result.append(daysName[dayOfWeeks.get(i)]);
+                            if(i != 2)
+                                result.append("-");
+                        }
+                        return result.toString();
+                    }
+                }
+            }
+        }catch(Exception e){
+            e.printStackTrace();
+        }
+        return "N/A";
+    }
+
+    /**
+     * Lấy 1 ca học (Sáng, Chiều hoặc Tối)
+     */
+    private String getShiftsFromSessions() {
+
+        try {
+            ArrayList<Session> sessions = this.getSessions();
+            if (sessions != null && !sessions.isEmpty()) {
+                String shiftName = sessions.get(0).getShift().getShiftName();
+                return shiftName;
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return "N/A";
     }
 }

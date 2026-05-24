@@ -8,10 +8,6 @@ public class Branch {
     private String address;
     private ArrayList<ClassRoom> classRooms;
 
-    public Branch(String branchName, String address) {
-        this.branchName = branchName;
-        this.address = address;
-    }
 
     public Branch(int id, String branchName, String address) {
         this.id = id;

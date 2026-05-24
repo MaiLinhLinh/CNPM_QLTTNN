@@ -53,7 +53,7 @@
               <EmptySpace max="-2" attributes="0"/>
               <Component id="pnlStudentInfo" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="jScrollPane1" pref="277" max="32767" attributes="0"/>
+              <Component id="jScrollPane1" pref="309" max="32767" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Component id="btnAddCourseClass" min="-2" max="-2" attributes="0"/>
@@ -67,9 +67,6 @@
   <SubComponents>
     <Component class="javax.swing.JButton" name="btnAddCourseClass">
       <Properties>
-        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Segoe UI" size="14" style="0"/>
-        </Property>
         <Property name="text" type="java.lang.String" value="Th&#xea;m l&#x1edb;p h&#x1ecd;c"/>
       </Properties>
       <Events>
@@ -78,9 +75,6 @@
     </Component>
     <Component class="javax.swing.JButton" name="btnRegister">
       <Properties>
-        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Segoe UI" size="14" style="0"/>
-        </Property>
         <Property name="text" type="java.lang.String" value="&#x110;&#x103;ng k&#xed;"/>
       </Properties>
       <Events>
@@ -91,18 +85,13 @@
       <Properties>
         <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
           <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
-            <TitledBorder title="Th&#xf4;ng tin h&#x1ecd;c vi&#xea;n">
-              <Font PropertyName="font" name="Segoe UI" size="14" style="0"/>
-            </TitledBorder>
+            <TitledBorder title="Th&#xf4;ng tin h&#x1ecd;c vi&#xea;n"/>
           </Border>
         </Property>
       </Properties>
       <SubComponents>
         <Component class="javax.swing.JLabel" name="jLabel1">
           <Properties>
-            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Segoe UI" size="14" style="0"/>
-            </Property>
             <Property name="text" type="java.lang.String" value="H&#x1ecd; v&#xe0; t&#xea;n:"/>
           </Properties>
           <Constraints>
@@ -113,9 +102,6 @@
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel2">
           <Properties>
-            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Segoe UI" size="14" style="0"/>
-            </Property>
             <Property name="text" type="java.lang.String" value="Ng&#xe0;y sinh:"/>
           </Properties>
           <Constraints>
@@ -126,9 +112,6 @@
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel3">
           <Properties>
-            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Segoe UI" size="14" style="0"/>
-            </Property>
             <Property name="text" type="java.lang.String" value="CCCD:"/>
           </Properties>
           <Constraints>
@@ -139,9 +122,6 @@
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel4">
           <Properties>
-            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Segoe UI" size="14" style="0"/>
-            </Property>
             <Property name="text" type="java.lang.String" value="S&#x110;T:"/>
           </Properties>
           <Constraints>
@@ -152,9 +132,6 @@
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel5">
           <Properties>
-            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Segoe UI" size="14" style="0"/>
-            </Property>
             <Property name="text" type="java.lang.String" value="Email:"/>
           </Properties>
           <Constraints>
@@ -165,9 +142,6 @@
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel6">
           <Properties>
-            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Segoe UI" size="14" style="0"/>
-            </Property>
             <Property name="text" type="java.lang.String" value="&#x110;&#x1ecb;a ch&#x1ec9;:"/>
           </Properties>
           <Constraints>
@@ -178,9 +152,6 @@
         </Component>
         <Component class="javax.swing.JLabel" name="lblFullName">
           <Properties>
-            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Segoe UI" size="14" style="0"/>
-            </Property>
             <Property name="text" type="java.lang.String" value="Nguy&#x1ec5;n V&#x103;n B&#xec;nh"/>
           </Properties>
           <Constraints>
@@ -191,9 +162,6 @@
         </Component>
         <Component class="javax.swing.JLabel" name="lblDateOfBirth">
           <Properties>
-            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Segoe UI" size="14" style="0"/>
-            </Property>
             <Property name="text" type="java.lang.String" value="19/01/2005"/>
           </Properties>
           <Constraints>
@@ -204,9 +172,6 @@
         </Component>
         <Component class="javax.swing.JLabel" name="lblIDCard">
           <Properties>
-            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Segoe UI" size="14" style="0"/>
-            </Property>
             <Property name="text" type="java.lang.String" value="000123456789"/>
           </Properties>
           <Constraints>
@@ -217,9 +182,6 @@
         </Component>
         <Component class="javax.swing.JLabel" name="lblPhone">
           <Properties>
-            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Segoe UI" size="14" style="0"/>
-            </Property>
             <Property name="text" type="java.lang.String" value="0123456789"/>
           </Properties>
           <Constraints>
@@ -230,9 +192,6 @@
         </Component>
         <Component class="javax.swing.JLabel" name="lblEmail">
           <Properties>
-            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Segoe UI" size="14" style="0"/>
-            </Property>
             <Property name="text" type="java.lang.String" value="hhtuann@gmail.com"/>
           </Properties>
           <Constraints>
@@ -243,9 +202,6 @@
         </Component>
         <Component class="javax.swing.JLabel" name="lblAddress">
           <Properties>
-            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Segoe UI" size="14" style="0"/>
-            </Property>
             <Property name="text" type="java.lang.String" value="Ho&#x1eb1;ng Ho&#xe1; - Thanh Ho&#xe1;"/>
           </Properties>
           <Constraints>
@@ -1149,9 +1105,7 @@
       <Properties>
         <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
           <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
-            <TitledBorder title="Danh s&#xe1;ch l&#x1edb;p &#x111;&#x103;ng k&#xfd; nguy&#x1ec7;n v&#x1ecd;ng">
-              <Font PropertyName="font" name="Segoe UI" size="14" style="0"/>
-            </TitledBorder>
+            <TitledBorder title="Danh s&#xe1;ch l&#x1edb;p &#x111;&#x103;ng k&#xfd; nguy&#x1ec7;n v&#x1ecd;ng"/>
           </Border>
         </Property>
       </Properties>
@@ -1164,7 +1118,7 @@
         <Component class="javax.swing.JTable" name="tblCourseClassList">
           <Properties>
             <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-              <Table columnCount="8" rowCount="5">
+              <Table columnCount="8" rowCount="0">
                 <Column editable="false" title="TT" type="java.lang.Integer"/>
                 <Column editable="false" title="T&#xea;n l&#x1edb;p" type="java.lang.String"/>
                 <Column editable="false" title="Ch&#x1b0;&#x1a1;ng tr&#xec;nh" type="java.lang.String"/>

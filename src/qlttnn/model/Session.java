@@ -1,5 +1,6 @@
 package qlttnn.model;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.util.ArrayList;
@@ -8,26 +9,16 @@ import java.util.Objects;
 public class Session {
     private int id;
     private String skill;
-    private LocalDateTime date;
+    private LocalDate date;
     private Shift shift;
     private ClassRoom classRoom;
 
-    public Session(String skill, LocalDateTime date, Shift shift, ClassRoom classRoom) {
-        this.skill = skill;
-        this.date = date;
-        this.shift = shift;
-        this.classRoom = classRoom;
-    }
-
-    public Session(int id, String skill, LocalDateTime date, Shift shift, ClassRoom classRoom) {
+    public Session(int id, String skill, LocalDate date, Shift shift, ClassRoom classRoom) {
         this.id = id;
         this.skill = skill;
         this.date = date;
         this.shift = shift;
         this.classRoom = classRoom;
-    }
-
-    public Session() {
     }
 
 
@@ -50,11 +41,11 @@ public class Session {
         this.skill = skill;
     }
 
-    public LocalDateTime getDate() {
+    public LocalDate getDate() {
         return date;
     }
 
-    public void setDate(LocalDateTime date) {
+    public void setDate(LocalDate date) {
         this.date = date;
     }
 
